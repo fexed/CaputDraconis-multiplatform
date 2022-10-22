@@ -18,7 +18,6 @@ func loadSpells() -> [iOSSpell] {
     
     var outputList = [iOSSpell]()
     spells.forEach { spell in
-        print("\t" + spell.nome + "\n")
         outputList.append(iOSSpell(id: UUID(), nome: spell.nome, descrizione: spell.descrizione, difinc: spell.difinc, categoria: spell.categoria, fonte: spell.fonte))
     }
     
