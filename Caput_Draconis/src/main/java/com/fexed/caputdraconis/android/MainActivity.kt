@@ -18,9 +18,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.fexed.caputdraconis.AndroidSpellsLoader.Companion.CSVFile
 import com.fexed.caputdraconis.Spell
 
 import com.fexed.caputdraconis.getSpellsLoader
+import java.io.InputStream
 
 @Composable
 fun MyApplicationTheme(
@@ -64,6 +66,7 @@ fun MyApplicationTheme(
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        CSVFile = assets.open("Incantesimi.csv")
         val spellsLoader = getSpellsLoader()
         val spells = spellsLoader.LoadSpells()
 

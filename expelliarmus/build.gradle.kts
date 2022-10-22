@@ -22,7 +22,9 @@ kotlin {
     }
     
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            resources.srcDir("src/commonMain/assets")
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
@@ -54,6 +56,11 @@ kotlin {
 android {
     namespace = "com.fexed.caputdraconis"
     compileSdk = 32
+    sourceSets {
+        named("main") {
+            assets.srcDir("src/commonMain/assets")
+        }
+    }
     defaultConfig {
         minSdk = 21
         targetSdk = 32

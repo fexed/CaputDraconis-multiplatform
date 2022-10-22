@@ -3,11 +3,28 @@ package com.fexed.caputdraconis
 interface SpellsLoader {
     fun GetCSVFromAssets(): String
     fun LoadSpells(): List<Spell> {
-        print("SPELLS\tLoading spells\n")
+        println("Common:SPELLS\tLoading spells")
         val list = ArrayList<Spell>()
         val CSV = GetCSVFromAssets()
-        list.add(Spell("Incantesimo di prova", "Questo è un incantesimo di prova", "Protego?", "Magico", "Fexed"))
-        list.add(Spell("Incantesimo di prova n.2", "Questo è un altro incantesimo di prova", "Protego?", "Magico", "Fexed"))
+        println("Common:SPELLS\tCSV Loaded: " + CSV.length + " chars")
+
+        val lines = CSV.split("\n")
+
+        for (line in lines) {
+            println("Common:SPELLS\t" + line)
+            if (line != "") {
+                val rawSpell = line.split("\t")
+                val parsedSpell = Spell(
+                    nome = rawSpell[0],
+                    descrizione = rawSpell[3],
+                    categoria = rawSpell[1],
+                    difinc = rawSpell[2],
+                    fonte = rawSpell[4]
+                )
+                list.add(parsedSpell)
+            }
+        }
+        println("Common:SPELLS\tSpell list created: " + list.size + " spells")
         return list
     }
 }
