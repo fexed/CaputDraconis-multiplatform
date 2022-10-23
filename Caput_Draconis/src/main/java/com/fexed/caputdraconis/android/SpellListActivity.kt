@@ -26,10 +26,10 @@ import java.util.*
 class SpellListActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (Locale.getDefault().language == "it")
-            CSVFile = assets.open("Incantesimi.csv")
+        CSVFile = if (Locale.getDefault().language == "it")
+            assets.open("Incantesimi.csv")
         else
-            CSVFile = assets.open("IncantesimiEN.csv")
+            assets.open("IncantesimiEN.csv")
         val spellsLoader = getSpellsLoader()
         val spells = spellsLoader.LoadSpells()
 
