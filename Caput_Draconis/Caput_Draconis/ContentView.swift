@@ -2,9 +2,14 @@ import SwiftUI
 import expelliarmus
 
 struct ContentView: View {
-    let iosspells = loadSpells()
+    let spells = iOSSpellsLoader().LoadSpells()
     
     var body: some View {
+        let iosspells = loadSpells(spells: spells)
+        let ProtegoSpell = getIOSSpell(spell: SpellsLoaderCompanion().ProtegoSpell)
+        let ScutumSpell = getIOSSpell(spell: SpellsLoaderCompanion().ScutumSpell)
+        let FiniteSpell = getIOSSpell(spell: SpellsLoaderCompanion().FiniteSpell)
+        
         List {
             ForEach(iosspells) { iosspell in
                 SpellElement(spell: iosspell)
@@ -13,15 +18,17 @@ struct ContentView: View {
     }
 }
 
-func loadSpells() -> [iOSSpell] {
-    let spells = iOSSpellsLoader().LoadSpells()
-    
+func loadSpells(spells: [Spell]) -> [iOSSpell] {
     var outputList = [iOSSpell]()
     spells.forEach { spell in
-        outputList.append(iOSSpell(id: UUID(), nome: spell.nome, descrizione: spell.descrizione, difinc: spell.difinc, categoria: spell.categoria, fonte: spell.fonte))
+        outputList.append(getIOSSpell(spell: spell))
     }
     
     return outputList
+}
+
+func getIOSSpell(spell: Spell) -> iOSSpell {
+    return iOSSpell(id: UUID(), nome: spell.nome, descrizione: spell.descrizione, difinc: spell.difinc, categoria: spell.categoria, fonte: spell.fonte)
 }
 
 struct SpellElement: View {
