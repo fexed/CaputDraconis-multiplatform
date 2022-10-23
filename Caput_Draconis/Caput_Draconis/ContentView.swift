@@ -34,9 +34,6 @@ struct SpellElement: View {
             HStack {
                 Text(spell.nome).font(.headline).multilineTextAlignment(.leading)
                 Spacer()
-            }.sheetWithDetents(isPresented: $showSpellDialog,
-                               detents: [.medium()]) {} content: {
-                SpellDialog(spell: spell)
             }
             HStack {
                 Text(spell.categoria).font(.body).multilineTextAlignment(.leading)
@@ -45,6 +42,9 @@ struct SpellElement: View {
             }
         }.onTapGesture {
             showSpellDialog.toggle()
+        }.sheetWithDetents(isPresented: $showSpellDialog,
+                           detents: [.medium()]) {} content: {
+            SpellDialog(spell: spell)
         }
     }
 }
