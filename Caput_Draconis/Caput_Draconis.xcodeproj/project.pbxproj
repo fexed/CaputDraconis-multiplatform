@@ -13,10 +13,10 @@
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		EBD1C1972904105100663EE4 /* Pods-Caput_Draconis in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD1C19329040E2F00663EE4 /* Pods-Caput_Draconis */; };
 		EBD1C1982904105100663EE4 /* Pods-Caput_Draconis in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBD1C19329040E2F00663EE4 /* Pods-Caput_Draconis */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EBD1C1A32904122600663EE4 /* IncantesimiEN.csv in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1A02904122600663EE4 /* IncantesimiEN.csv */; };
-		EBD1C1A42904122600663EE4 /* Incantesimi.csv in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1A12904122600663EE4 /* Incantesimi.csv */; };
-		EBD1C1A52904122600663EE4 /* Regolamento-Duelli-2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1A22904122600663EE4 /* Regolamento-Duelli-2.pdf */; };
 		EBD1C1A82905B66600663EE4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1AA2905B66600663EE4 /* Localizable.strings */; };
+		EBD1C1B02905B8C000663EE4 /* Incantesimi.csv in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1AD2905B8C000663EE4 /* Incantesimi.csv */; };
+		EBD1C1B12905B8C000663EE4 /* Regolamento-Duelli-2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1AE2905B8C000663EE4 /* Regolamento-Duelli-2.pdf */; };
+		EBD1C1B22905B8C000663EE4 /* IncantesimiEN.csv in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1AF2905B8C000663EE4 /* IncantesimiEN.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +54,11 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCA26EAAAD1465AA4210360F /* Pods-Caput_Draconis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caput_Draconis.debug.xcconfig"; path = "Target Support Files/Pods-Caput_Draconis/Pods-Caput_Draconis.debug.xcconfig"; sourceTree = "<group>"; };
 		EBD1C18D29040E2F00663EE4 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
-		EBD1C1A02904122600663EE4 /* IncantesimiEN.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = IncantesimiEN.csv; path = ../../../Downloads/IncantesimiEN.csv; sourceTree = "<group>"; };
-		EBD1C1A12904122600663EE4 /* Incantesimi.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Incantesimi.csv; path = ../../../Downloads/Incantesimi.csv; sourceTree = "<group>"; };
-		EBD1C1A22904122600663EE4 /* Regolamento-Duelli-2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Regolamento-Duelli-2.pdf"; path = "../../../Downloads/Regolamento-Duelli-2.pdf"; sourceTree = "<group>"; };
 		EBD1C1A92905B66600663EE4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBD1C1AB2905B67400663EE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EBD1C1AD2905B8C000663EE4 /* Incantesimi.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Incantesimi.csv; sourceTree = "<group>"; };
+		EBD1C1AE2905B8C000663EE4 /* Regolamento-Duelli-2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Regolamento-Duelli-2.pdf"; sourceTree = "<group>"; };
+		EBD1C1AF2905B8C000663EE4 /* IncantesimiEN.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IncantesimiEN.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +84,7 @@
 		6CF35BD160E920EFEAF1A97C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBD1C1AC2905B8C000663EE4 /* assets */,
 				EBD1C18D29040E2F00663EE4 /* Pods.xcodeproj */,
 				05C45EC2DA7D1A4F96E69CAB /* Pods_Caput_Draconis.framework */,
 			);
@@ -94,9 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				EBD1C1AA2905B66600663EE4 /* Localizable.strings */,
-				EBD1C1A12904122600663EE4 /* Incantesimi.csv */,
-				EBD1C1A02904122600663EE4 /* IncantesimiEN.csv */,
-				EBD1C1A22904122600663EE4 /* Regolamento-Duelli-2.pdf */,
 				7555FF7D242A565900829871 /* Caput_Draconis */,
 				7555FF7C242A565900829871 /* Products */,
 				80AD8FEE9EE093950BCF92B2 /* Pods */,
@@ -139,6 +137,17 @@
 				EBD1C19329040E2F00663EE4 /* Pods-Caput_Draconis */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EBD1C1AC2905B8C000663EE4 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				EBD1C1AD2905B8C000663EE4 /* Incantesimi.csv */,
+				EBD1C1AE2905B8C000663EE4 /* Regolamento-Duelli-2.pdf */,
+				EBD1C1AF2905B8C000663EE4 /* IncantesimiEN.csv */,
+			);
+			name = assets;
+			path = ../expelliarmus/src/commonMain/assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,10 +228,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD1C1A32904122600663EE4 /* IncantesimiEN.csv in Resources */,
+				EBD1C1B22905B8C000663EE4 /* IncantesimiEN.csv in Resources */,
 				EBD1C1A82905B66600663EE4 /* Localizable.strings in Resources */,
-				EBD1C1A52904122600663EE4 /* Regolamento-Duelli-2.pdf in Resources */,
-				EBD1C1A42904122600663EE4 /* Incantesimi.csv in Resources */,
+				EBD1C1B12905B8C000663EE4 /* Regolamento-Duelli-2.pdf in Resources */,
+				EBD1C1B02905B8C000663EE4 /* Incantesimi.csv in Resources */,
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
 			);
