@@ -6,4 +6,6 @@
   Copyright © 2022 fexed. All rights reserved.
 */
 
-"difinc" = "Defense";
+"difinc" = "Defensive spell";
+"cat" = "Category";
+"src" = "Source";

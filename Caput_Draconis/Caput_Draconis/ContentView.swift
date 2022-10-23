@@ -55,12 +55,12 @@ struct SpellDialog: View {
     var body: some View {
         VStack {
             Text(spell.nome).font(.title).bold().multilineTextAlignment(.leading).padding(.leading, 16).frame(maxWidth: .infinity, alignment: .leading)
-            Text(spell.categoria).font(.footnote).multilineTextAlignment(.leading).padding(.leading, 16).frame(maxWidth: .infinity, alignment: .leading)
+            Text(NSLocalizedString("cat", comment: "") + ": " + spell.categoria).font(.footnote).multilineTextAlignment(.leading).padding(.leading, 16).frame(maxWidth: .infinity, alignment: .leading)
             Text(NSLocalizedString("difinc", comment: "") + ": " + spell.difinc).font(.footnote).multilineTextAlignment(.leading).padding(.leading, 16).frame(maxWidth: .infinity, alignment: .leading)
             Text(spell.descrizione).font(.body).multilineTextAlignment(.leading).padding().frame(maxWidth: .infinity, alignment: .leading)
             HStack {
                 Spacer()
-                Text(spell.fonte).font(.caption).multilineTextAlignment(.trailing).padding(.trailing, 16)
+                Text(NSLocalizedString("src", comment: "") + ": " + spell.fonte).font(.caption).multilineTextAlignment(.trailing).padding(.trailing, 16)
             }
             
         }

@@ -6,4 +6,6 @@
   Copyright © 2022 fexed. All rights reserved.
 */
 
-"difinc" = "Difesa";
+"difinc" = "Incantesimo di difesa";
+"cat" = "Categoria";
+"src" = "Fonte";
