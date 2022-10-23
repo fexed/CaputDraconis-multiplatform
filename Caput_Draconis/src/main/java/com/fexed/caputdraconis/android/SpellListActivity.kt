@@ -102,13 +102,13 @@ fun SpellDialog(context: Context, spell: Spell, onClose: () -> Unit) {
                         fontSize = 24.sp,
                         modifier = Modifier.fillMaxWidth())
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = spell.categoria, fontSize = 12.sp)
+                    Text(text = "${context.getString(R.string.cat)}: ${spell.categoria}", fontSize = 12.sp)
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(text = "${context.getString(R.string.difinc)}: ${spell.difinc}", fontSize = 12.sp)
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(text = spell.descrizione, modifier = Modifier.fillMaxWidth())
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = spell.fonte,
+                    Text(text = "${context.getString(R.string.src)}: ${spell.fonte}",
                         fontSize = 10.sp,
                         modifier = Modifier.fillMaxWidth(),
                         textAlign = TextAlign.End)

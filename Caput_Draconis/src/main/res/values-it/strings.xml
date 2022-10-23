@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="difinc">Difesa</string>
     <string name="appname">Caput Draconis Incantesimi</string>
+
+    <string name="difinc">Incantesimo di difesa</string>
+    <string name="cat">Categoria</string>
+    <string name="src">Fonte</string>
 </resources>
