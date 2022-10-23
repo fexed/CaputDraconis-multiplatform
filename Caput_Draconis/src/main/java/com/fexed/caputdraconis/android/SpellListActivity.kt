@@ -1,5 +1,6 @@
 package com.fexed.caputdraconis.android
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -39,7 +40,7 @@ class SpellListActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    SpellList(spells = spells)
+                    SpellList(this, spells = spells)
                 }
             }
         }
@@ -47,11 +48,11 @@ class SpellListActivity : ComponentActivity() {
 }
 
 @Composable
-fun SpellList(spells: List<Spell>) {
+fun SpellList(context: Context, spells: List<Spell>) {
     Surface(shape = MaterialTheme.shapes.large, modifier = Modifier.padding(horizontal = 16.dp), elevation = 10.dp) {
         LazyColumn {
             items(items = spells, itemContent =  { spell ->
-                SpellListElement(spell = spell)
+                SpellListElement(context = context, spell = spell)
                 Divider()
             })
         }
@@ -60,10 +61,10 @@ fun SpellList(spells: List<Spell>) {
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun SpellListElement(spell: Spell) {
+fun SpellListElement(context: Context, spell: Spell) {
     var showSpellDialog by remember { mutableStateOf(false)}
 
-    if (showSpellDialog) SpellDialog(spell = spell) { showSpellDialog = false }
+    if (showSpellDialog) SpellDialog(context = context, spell = spell) { showSpellDialog = false }
 
     Surface(onClick = {showSpellDialog = true}) {
         Column(modifier = Modifier
@@ -87,7 +88,7 @@ fun SpellListElement(spell: Spell) {
 }
 
 @Composable
-fun SpellDialog(spell: Spell, onClose: () -> Unit) {
+fun SpellDialog(context: Context, spell: Spell, onClose: () -> Unit) {
     Dialog(onDismissRequest = onClose) {
         Surface(shape = MaterialTheme.shapes.large, elevation = 10.dp, modifier = Modifier
             .wrapContentHeight()
@@ -103,7 +104,7 @@ fun SpellDialog(spell: Spell, onClose: () -> Unit) {
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(text = spell.categoria, fontSize = 12.sp)
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = "Difesa: ${spell.difinc}", fontSize = 12.sp)
+                    Text(text = "${context.getString(R.string.difinc)}: ${spell.difinc}", fontSize = 12.sp)
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(text = spell.descrizione, modifier = Modifier.fillMaxWidth())
                     Spacer(modifier = Modifier.height(8.dp))
@@ -122,9 +123,9 @@ fun SpellDialog(spell: Spell, onClose: () -> Unit) {
 fun ListPreview() {
     CaputDraconisTheme {
         Column {
-            SpellListElement(Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
-            SpellListElement(Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
-            SpellListElement(Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
+            SpellListElement(SpellListActivity(), Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
+            SpellListElement(SpellListActivity(), Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
+            SpellListElement(SpellListActivity(), Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
         }
     }
 }
@@ -133,6 +134,6 @@ fun ListPreview() {
 @Composable
 fun DialogPreview() {
     CaputDraconisTheme {
-        SpellDialog(Spell("Nome", "Descrizione molto molto lunga\nDescrizione molto molto lunga\nDescrizione molto molto lunga\nDescrizione molto molto lunga\n", "Difesa", "Categoria", "Fonte")) {}
+        SpellDialog(SpellListActivity(), Spell("Nome", "Descrizione molto molto lunga\nDescrizione molto molto lunga\nDescrizione molto molto lunga\nDescrizione molto molto lunga\n", "Difesa", "Categoria", "Fonte")) {}
     }
 }
