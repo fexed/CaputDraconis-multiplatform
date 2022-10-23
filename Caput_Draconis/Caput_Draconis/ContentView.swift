@@ -28,7 +28,22 @@ struct SpellElement: View {
     var spell: iOSSpell
     
     var body: some View {
-        Text(spell.nome)
+        VStack {
+            HStack {
+                Text(spell.nome).font(.headline).multilineTextAlignment(.leading)
+                Spacer()
+            }
+            HStack {
+                Text(spell.categoria).font(.body).multilineTextAlignment(.leading)
+                Spacer()
+                Text(spell.fonte).font(.caption).multilineTextAlignment(.trailing)
+            }
+        }.onTapGesture {
+            print("Tapped " + spell.nome)
+        }.frame(
+            maxWidth: .infinity,
+            maxHeight: .infinity
+        )
     }
 }
 
