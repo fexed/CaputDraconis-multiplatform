@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="difinc">Defense</string>
+    <string name="appname">Caput Draconis Spells</string>
 </resources>
