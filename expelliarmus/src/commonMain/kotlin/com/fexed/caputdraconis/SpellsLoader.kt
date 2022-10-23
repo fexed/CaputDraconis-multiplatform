@@ -1,6 +1,16 @@
 package com.fexed.caputdraconis
 
+import kotlin.native.concurrent.ThreadLocal
+
 interface SpellsLoader {
+
+    @ThreadLocal
+    companion object {
+        lateinit var FiniteSpell: Spell
+        lateinit var ProtegoSpell: Spell
+        lateinit var ScutumSpell: Spell
+    }
+
     fun GetCSVFromAssets(): String
     fun LoadSpells(): List<Spell> {
         val list = ArrayList<Spell>()
@@ -19,6 +29,12 @@ interface SpellsLoader {
                     fonte = rawSpell[4]
                 )
                 list.add(parsedSpell)
+
+                when (parsedSpell.nome.lowercase()) {
+                    "finite" -> FiniteSpell = parsedSpell
+                    "protego" -> ProtegoSpell = parsedSpell
+                    "scutum" -> ScutumSpell = parsedSpell
+                }
             }
         }
         return list
