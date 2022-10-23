@@ -1,10 +1,11 @@
 package com.fexed.caputdraconis.android
 
+import android.content.res.Resources.Theme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,6 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -22,10 +24,9 @@ import com.fexed.caputdraconis.AndroidSpellsLoader.Companion.CSVFile
 import com.fexed.caputdraconis.Spell
 
 import com.fexed.caputdraconis.getSpellsLoader
-import java.io.InputStream
 
 @Composable
-fun MyApplicationTheme(
+fun CaputDraconisTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
@@ -63,7 +64,7 @@ fun MyApplicationTheme(
     )
 }
 
-class MainActivity : ComponentActivity() {
+class SpellListActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         CSVFile = assets.open("Incantesimi.csv")
@@ -71,14 +72,14 @@ class MainActivity : ComponentActivity() {
         val spells = spellsLoader.LoadSpells()
 
         setContent {
-            MyApplicationTheme {
+            CaputDraconisTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
                     LazyColumn {
                         items(items = spells, itemContent =  { spell ->
-                            SpellElement(spell = spell)
+                            SpellListElement(spell = spell)
                         })
                     }
                 }
@@ -88,14 +89,34 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun SpellElement(spell: Spell) {
-    Text(text = spell.nome)
+fun SpellListElement(spell: Spell) {
+    Column(modifier = Modifier
+        .fillMaxWidth()
+        .wrapContentHeight()
+        .padding(8.dp)) {
+        Text(text = spell.nome,
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp,
+            modifier = Modifier.fillMaxWidth())
+        Row(modifier = Modifier.fillMaxWidth()) {
+            Text(text = spell.categoria,
+                fontSize = 14.sp)
+            Text(text = spell.fonte,
+                fontSize = 10.sp,
+                modifier = Modifier.fillMaxWidth(),
+                textAlign = TextAlign.End)
+        }
+    }
 }
 
 @Preview
 @Composable
 fun DefaultPreview() {
-    MyApplicationTheme {
-        SpellElement(Spell("Prova", "", "", "", ""))
+    CaputDraconisTheme {
+        Column {
+            SpellListElement(Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
+            SpellListElement(Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
+            SpellListElement(Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
+        }
     }
 }
