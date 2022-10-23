@@ -1,7 +1,7 @@
-Abalieno	Generico	Protego	Allontana una persona da se stessi. Contr: Admoveo	BTH
+Abalieno	Generico	Protego	Allontana una persona da se stessi. Contr: Admoveo	CD
 Accio	Generico	Scutum	Attira velocemente un oggetto che potresti fisicamente spostare. Contr: Relascio	Calice – Libro
 Acutus	Trasfigurazione	-	Trasforma un piccolo oggetto in ago	Pietra - Libro
-Admoveo	Generico	Protego	Fa avvicinare una persona verso se stessi. Contr: Abalieno	BTH
+Admoveo	Generico	Protego	Fa avvicinare una persona verso se stessi. Contr: Abalieno	CD
 Aguamenti	Elementale	Scutum	Produce un getto d'acqua dalla bacchetta	Calice – Libro
 Anapneo	Generico	-	Libera le vie respiratorie e i polmoni	Principe – Libro
 Anteoculatia	Trasfigurazione	Protego	Trasforma i capelli in palchi di corna	Principe – Libro
@@ -123,7 +123,7 @@ Relascio	Generico	Scutum	Allontana velocemente un oggetto che potresti fisicamen
 Reparo	Generico	-	Ripara qualcosa di rotto o mandato in frantumi	Prigioniero – Libro
 Rictusempra	Magico	Protego	Fa il solletico al bersaglio	Camera – Libro
 Sagitta	Fisico	Scutum	Scaglia una freccia argentata dalla bacchetta	Quidditch
-Scutum	Difensivo	  -	Evoca uno scudo materiale che protegge dagli attacchi fisici o elementali	BTH
+Scutum	Difensivo	  -	Evoca uno scudo materiale che protegge dagli attacchi fisici o elementali	CD
 Sectumsempra	Proibito	 -	Crea lesioni da taglio molto gravi sul bersaglio	Principe – Libro
 Serpensortia	Evocazione	Finite	Evoca un serpente. Contr: Vipera Evanesca	Camera – Libro
 Silencio	Magico	Protego	Ammutolisce il bersaglio	Ordine – Libro
