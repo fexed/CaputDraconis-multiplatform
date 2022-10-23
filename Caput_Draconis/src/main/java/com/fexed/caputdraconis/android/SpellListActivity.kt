@@ -21,11 +21,15 @@ import com.fexed.caputdraconis.AndroidSpellsLoader.Companion.CSVFile
 import com.fexed.caputdraconis.Spell
 
 import com.fexed.caputdraconis.getSpellsLoader
+import java.util.*
 
 class SpellListActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        CSVFile = assets.open("Incantesimi.csv")
+        if (Locale.getDefault().language == "it")
+            CSVFile = assets.open("Incantesimi.csv")
+        else
+            CSVFile = assets.open("IncantesimiEN.csv")
         val spellsLoader = getSpellsLoader()
         val spells = spellsLoader.LoadSpells()
 
