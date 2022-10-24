@@ -10,6 +10,7 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		636916E0AC4CA63FCE2D497C /* Pods_Caput_Draconis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C45EC2DA7D1A4F96E69CAB /* Pods_Caput_Draconis.framework */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		EBD1C1972904105100663EE4 /* Pods-Caput_Draconis in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD1C19329040E2F00663EE4 /* Pods-Caput_Draconis */; };
 		EBD1C1982904105100663EE4 /* Pods-Caput_Draconis in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBD1C19329040E2F00663EE4 /* Pods-Caput_Draconis */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -67,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBD1C1972904105100663EE4 /* Pods-Caput_Draconis in Frameworks */,
+				636916E0AC4CA63FCE2D497C /* Pods_Caput_Draconis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
