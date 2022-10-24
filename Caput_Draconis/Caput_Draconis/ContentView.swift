@@ -1,21 +1,14 @@
 import SwiftUI
 import expelliarmus
 
-struct ContentView: View {
-    let spells = iOSSpellsLoader().LoadSpells()
+struct iOSSpell: Identifiable {
+    let id: UUID
+    let nome: String
+    let descrizione: String
+    let difinc: String
+    let categoria: String
+    let fonte: String
     
-    var body: some View {
-        let iosspells = loadSpells(spells: spells)
-        let ProtegoSpell = getIOSSpell(spell: SpellsLoaderCompanion().ProtegoSpell)
-        let ScutumSpell = getIOSSpell(spell: SpellsLoaderCompanion().ScutumSpell)
-        let FiniteSpell = getIOSSpell(spell: SpellsLoaderCompanion().FiniteSpell)
-        
-        List {
-            ForEach(iosspells) { iosspell in
-                SpellElement(spell: iosspell)
-            }
-        }
-    }
 }
 
 func loadSpells(spells: [Spell]) -> [iOSSpell] {
@@ -29,6 +22,25 @@ func loadSpells(spells: [Spell]) -> [iOSSpell] {
 
 func getIOSSpell(spell: Spell) -> iOSSpell {
     return iOSSpell(id: UUID(), nome: spell.nome, descrizione: spell.descrizione, difinc: spell.difinc, categoria: spell.categoria, fonte: spell.fonte)
+}
+
+struct ContentView: View {
+    @State var iosspells = loadSpells(spells: iOSSpellsLoader().LoadSpells())
+    
+    var body: some View {
+        let spells = iOSSpellsLoader().LoadSpells()
+        let ProtegoSpell = getIOSSpell(spell: SpellsLoaderCompanion().ProtegoSpell)
+        let ScutumSpell = getIOSSpell(spell: SpellsLoaderCompanion().ScutumSpell)
+        let FiniteSpell = getIOSSpell(spell: SpellsLoaderCompanion().FiniteSpell)
+        
+        NavigationView {
+            List {
+                ForEach(iosspells) { iosspell in
+                    SpellElement(spell: iosspell)
+                }
+            }.navigationTitle("appname").navigationBarTitleDisplayMode(.inline)
+        }
+    }
 }
 
 struct SpellElement: View {
@@ -71,55 +83,6 @@ struct SpellDialog: View {
             }
             
         }
-    }
-}
-
-/*
- @Composable
- fun SpellDialog(spell: Spell, onClose: () -> Unit) {
-     Dialog(onDismissRequest = onClose) {
-         Surface(shape = MaterialTheme.shapes.large, elevation = 10.dp, modifier = Modifier
-             .wrapContentHeight()
-             .fillMaxWidth()) {
-             Box(modifier = Modifier.verticalScroll(rememberScrollState())) {
-                 Column(modifier = Modifier
-                     .padding(16.dp)
-                     .wrapContentSize()) {
-                     Text(text = spell.nome,
-                         fontWeight = FontWeight.Bold,
-                         fontSize = 24.sp,
-                         modifier = Modifier.fillMaxWidth())
-                     Spacer(modifier = Modifier.height(8.dp))
-                     Text(text = spell.categoria, fontSize = 12.sp)
-                     Spacer(modifier = Modifier.height(8.dp))
-                     Text(text = "Difesa: ${spell.difinc}", fontSize = 12.sp)
-                     Spacer(modifier = Modifier.height(8.dp))
-                     Text(text = spell.descrizione, modifier = Modifier.fillMaxWidth())
-                     Spacer(modifier = Modifier.height(8.dp))
-                     Text(text = spell.fonte,
-                         fontSize = 10.sp,
-                         modifier = Modifier.fillMaxWidth(),
-                         textAlign = TextAlign.End)
-                 }
-             }
-         }
-     }
- }
- */
-
-struct iOSSpell: Identifiable {
-    let id: UUID
-    let nome: String
-    let descrizione: String
-    let difinc: String
-    let categoria: String
-    let fonte: String
-    
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
 

@@ -6,6 +6,7 @@
   Copyright © 2022 fexed. All rights reserved.
 */
 
+"appname" = "Caput Draconis Duel";
 "difinc" = "Incantesimo di difesa";
 "cat" = "Categoria";
 "src" = "Fonte";
