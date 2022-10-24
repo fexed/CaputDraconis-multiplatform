@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appname">Caput Draconis Spells</string>
+    <string name="appname">Caput Draconis Duels</string>
+
+    <string name="search">Search</string>
+    <string name="info">Info</string>
 
     <string name="difinc">Defensive spell</string>
     <string name="cat">Category</string>

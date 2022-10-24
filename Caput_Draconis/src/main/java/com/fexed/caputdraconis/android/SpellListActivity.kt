@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
@@ -20,8 +21,10 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import com.fexed.caputdraconis.AndroidSpellsLoader.Companion.CSVFile
 import com.fexed.caputdraconis.Spell
+import com.fexed.caputdraconis.SpellListUtility
 
 import com.fexed.caputdraconis.getSpellsLoader
+import kotlinx.coroutines.launch
 import java.util.*
 
 class SpellListActivity : ComponentActivity() {
@@ -32,15 +35,37 @@ class SpellListActivity : ComponentActivity() {
         else
             assets.open("IncantesimiEN.csv")
         val spellsLoader = getSpellsLoader()
-        val spells = spellsLoader.LoadSpells()
+        val spellList = spellsLoader.LoadSpells()
 
         setContent {
+            var query by remember { mutableStateOf("") }
+            val listState = rememberLazyListState()
+            val coroutineScope = rememberCoroutineScope()
+
             CaputDraconisTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    SpellList(this, spells = spells)
+                StandardScaffold(context = this, scaffoldState = rememberScaffoldState(), actions =  {
+                    Button(onClick = {
+                        /* TODO */
+                    }) { Text(text = getString(R.string.info)) }
+                }) {
+                    LazyColumn(state = listState) {
+                        item {
+                            TextField(
+                                modifier = Modifier.fillMaxWidth().padding(8.dp),
+                                value = query,
+                                onValueChange = { query = it },
+                                placeholder = { Text(getString(R.string.search)) }
+                            )
+                        }
+                        items(items = SpellListUtility.Search(query, spellList), itemContent =  { spell ->
+                            SpellListElement(context = baseContext, spell = spell)
+                            Divider()
+                        })
+                    }.run {
+                        coroutineScope.launch {
+                            listState.scrollToItem(1)
+                        }
+                    }
                 }
             }
         }
@@ -48,14 +73,22 @@ class SpellListActivity : ComponentActivity() {
 }
 
 @Composable
-fun SpellList(context: Context, spells: List<Spell>) {
-    Surface(shape = MaterialTheme.shapes.large, modifier = Modifier.padding(horizontal = 16.dp), elevation = 10.dp) {
-        LazyColumn {
-            items(items = spells, itemContent =  { spell ->
-                SpellListElement(context = context, spell = spell)
-                Divider()
-            })
+fun StandardScaffold(context: Context, scaffoldState: ScaffoldState, actions: (@Composable RowScope.() -> Unit), content: (@Composable () -> Unit)) {
+    Scaffold(scaffoldState = scaffoldState,
+        topBar = {
+            TopAppBar(
+                title = { Text(context.getString(R.string.appname)) },
+                actions = actions
+            )
         }
+    ){
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it),
+            color = MaterialTheme.colors.background,
+            content = content
+        )
     }
 }
 
@@ -115,25 +148,5 @@ fun SpellDialog(context: Context, spell: Spell, onClose: () -> Unit) {
                 }
             }
         }
-    }
-}
-
-@Preview
-@Composable
-fun ListPreview() {
-    CaputDraconisTheme {
-        Column {
-            SpellListElement(SpellListActivity(), Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
-            SpellListElement(SpellListActivity(), Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
-            SpellListElement(SpellListActivity(), Spell("Nome", "Descrizione", "Difesa", "Categoria", "Fonte"))
-        }
-    }
-}
-
-@Preview
-@Composable
-fun DialogPreview() {
-    CaputDraconisTheme {
-        SpellDialog(SpellListActivity(), Spell("Nome", "Descrizione molto molto lunga\nDescrizione molto molto lunga\nDescrizione molto molto lunga\nDescrizione molto molto lunga\n", "Difesa", "Categoria", "Fonte")) {}
     }
 }

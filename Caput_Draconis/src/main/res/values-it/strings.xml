@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appname">Caput Draconis Incantesimi</string>
+    <string name="appname">Caput Draconis Duels</string>
+
+    <string name="search">Cerca</string>
+    <string name="info">Info</string>
 
     <string name="difinc">Incantesimo di difesa</string>
     <string name="cat">Categoria</string>
