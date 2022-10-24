@@ -7,6 +7,10 @@
 */
 
 "appname" = "Caput Draconis Duel";
+
+"search" = "Cerca";
+"info" = "Info";
+
 "difinc" = "Incantesimo di difesa";
 "cat" = "Categoria";
 "src" = "Fonte";

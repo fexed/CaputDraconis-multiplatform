@@ -26,6 +26,7 @@ func getIOSSpell(spell: Spell) -> iOSSpell {
 
 struct ContentView: View {
     @State var iosspells = loadSpells(spells: iOSSpellsLoader().LoadSpells())
+    @State var query = ""
     
     var body: some View {
         let spells = iOSSpellsLoader().LoadSpells()
@@ -35,10 +36,20 @@ struct ContentView: View {
         
         NavigationView {
             List {
-                ForEach(iosspells) { iosspell in
+                ForEach(loadSpells(spells: SpellListUtility.companion.Search(query: query, spellList: spells))) { iosspell in
                     SpellElement(spell: iosspell)
                 }
-            }.navigationTitle("appname").navigationBarTitleDisplayMode(.inline)
+            }
+            .navigationTitle("appname")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar() {
+                ToolbarItem() {
+                    Button("info") {
+                        
+                    }
+                }
+            }
+            .searchable(text: $query, prompt: "search")
         }
     }
 }
