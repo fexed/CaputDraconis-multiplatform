@@ -12,14 +12,14 @@
     <string name="source">Source</string>
 
     <string name="ideazioneesviluppotext">Design and development</string>
-    <string name="graficatext">\nGraphics</string>
-    <string name="ideazionegiocotext">\nGame and rules design</string>
-    <string name="sceltaincantesimitext">\nSpell list selection</string>
-    <string name="fontieformuletext">\nFormulas and sources</string>
-    <string name="effettiecontrtext">\nEffects and counterspells</string>
-    <string name="supportoconsulenzatext">\nSupport and consulting</string>
-    <string name="graziedirettivotext">\nSpecial thanks to the CD\'s Directive</string>
-    <string name="grazieragazzitext">\nand to all of you, that helped develop this game during the years by playing and asking, creating a unique and funny game experience.</string>
+    <string name="graficatext">Graphics</string>
+    <string name="ideazionegiocotext">Game and rules design</string>
+    <string name="sceltaincantesimitext">Spell list selection</string>
+    <string name="fontieformuletext">Formulas and sources</string>
+    <string name="effettiecontrtext">Effects and counterspells</string>
+    <string name="supportoconsulenzatext">Support and consulting</string>
+    <string name="graziedirettivotext">Special thanks to the CD\'s Directive</string>
+    <string name="grazieragazzitext">and to all of you, that helped develop this game during the years by playing and asking, creating a unique and funny game experience.</string>
 
     <string name="infocdtext">Caput Draconis\n\nAre you still waiting for your letter? Thanks to BTH, you get the chance to experience in first person the world\'s most famous School of Witchcraft and Wizardry.\nFor five days, BTH offers an immersive experience to its members: from a stay at a themed hotel to lessons to follow in the Great Hall, strictly in uniform!\n\nThis is an italian association.\nFor all info:</string>
     <string name="infoapptext">This is a reference app that contains the Harry Potter\'s spells used during the Duelists Club that takes place during the events organized by Caput Draconis. During the event the players challenge each other like in a LARP.\n\nThis app is thought to be consulted briefly before a duel and to give a document on which to study to prepare for the duels.\n\nFor any app-related issue, please contact:</string>
