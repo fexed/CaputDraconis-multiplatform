@@ -4,7 +4,11 @@ import SwiftUI
 struct iOSApp: App {
 	var body: some Scene {
 		WindowGroup {
-			ContentView()
+			SpellListWindow()
 		}
+        
+        WindowGroup("Credits") {
+            CreditsWindow()
+        }.handlesExternalEvents(matching: Set(arrayLiteral: "Credits"))
 	}
 }

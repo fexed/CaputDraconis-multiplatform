@@ -24,7 +24,8 @@ func getIOSSpell(spell: Spell) -> iOSSpell {
     return iOSSpell(id: UUID(), nome: spell.nome, descrizione: spell.descrizione, difinc: spell.difinc, categoria: spell.categoria, fonte: spell.fonte)
 }
 
-struct ContentView: View {
+struct SpellListWindow: View {
+    @State private var isShowingCreditsWindow = false
     @State var iosspells = loadSpells(spells: iOSSpellsLoader().LoadSpells())
     @State var query = ""
     
@@ -35,16 +36,18 @@ struct ContentView: View {
         let FiniteSpell = getIOSSpell(spell: SpellsLoaderCompanion().FiniteSpell)
         
         NavigationView {
-            List {
-                ForEach(loadSpells(spells: SpellListUtility.companion.Search(query: query, spellList: spells))) { iosspell in
-                    SpellElement(spell: iosspell)
+            NavigationLink(destination: CreditsWindow(), isActive: $isShowingCreditsWindow) {
+                List {
+                    ForEach(loadSpells(spells: SpellListUtility.companion.Search(query: query, spellList: spells))) { iosspell in
+                        SpellElement(spell: iosspell)
+                    }
                 }
             }
             .navigationTitle("appname")
             .toolbar() {
                 ToolbarItem() {
                     Button {
-                        
+                        isShowingCreditsWindow = true
                     } label: {
                         Image(systemName: "info")
                     }
