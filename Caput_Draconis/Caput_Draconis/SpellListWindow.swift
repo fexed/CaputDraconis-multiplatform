@@ -36,20 +36,21 @@ struct SpellListWindow: View {
         let FiniteSpell = getIOSSpell(spell: SpellsLoaderCompanion().FiniteSpell)
         
         NavigationView {
-            NavigationLink(destination: CreditsWindow(), isActive: $isShowingCreditsWindow) {
-                List {
-                    ForEach(loadSpells(spells: SpellListUtility.companion.Search(query: query, spellList: spells))) { iosspell in
-                        SpellElement(spell: iosspell)
-                    }
+            List {
+                ForEach(loadSpells(spells: SpellListUtility.companion.Search(query: query, spellList: spells))) { iosspell in
+                    SpellElement(spell: iosspell)
                 }
             }
+            
             .navigationTitle("appname")
             .toolbar() {
                 ToolbarItem() {
-                    Button {
-                        isShowingCreditsWindow = true
-                    } label: {
-                        Image(systemName: "info")
+                    NavigationLink(destination: CreditsWindow(), isActive: $isShowingCreditsWindow) {
+                        Button {
+                            isShowingCreditsWindow = true
+                        } label: {
+                            Image(systemName: "info")
+                        }
                     }
                 }
             }
