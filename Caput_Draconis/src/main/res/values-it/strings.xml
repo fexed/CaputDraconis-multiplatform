@@ -5,7 +5,23 @@
     <string name="search">Cerca</string>
     <string name="info">Info</string>
 
-    <string name="difinc">Incantesimo di difesa</string>
-    <string name="cat">Categoria</string>
-    <string name="src">Fonte</string>
+    <string name="spells">Incantesimi</string>
+    <string name="name">Nome</string>
+    <string name="category">Categoria</string>
+    <string name="defensivespell">Incantesimo difensivo</string>
+    <string name="source">Fonte</string>
+
+    <string name="ideazioneesviluppotext">Ideazione e sviluppo app</string>
+    <string name="graficatext">\nGrafica</string>
+    <string name="ideazionegiocotext">\nIdeazione gioco e regolamento</string>
+    <string name="sceltaincantesimitext">\nScelta incantesimi</string>
+    <string name="fontieformuletext">\nFonti e formule</string>
+    <string name="effettiecontrtext">\nEffetti e controincantesimi</string>
+    <string name="supportoconsulenzatext">\nSupporto e consulenza</string>
+    <string name="graziedirettivotext">\nSi ringrazia il Direttivo di CD</string>
+    <string name="grazieragazzitext">\ne tutti i ragazzi di CD che giocando nel corso degli anni e facendo domande hanno permesso a questo gioco di svilupparsi, di ampliare la lista di incantesimi, perfezionarli e creare un\'esperienza di gioco divertente ed unica.</string>
+
+    <string name="infocdtext">Caput Draconis\n\nStai ancora aspettando la tua lettera per Hogwarts? L\'attesa è finita!\n\nOgni anno grazie a BTH avrai la possibilità di vivere in prima persona l\'esperienza della Scuola di Magia più famosa al mondo.\nL\'Associazione Caput Draconis offre, per cinque giorni, ai propri tesserati un\'esperienza immersiva: potrete soggiornare in un hotel allestito a tema e varcare, rigorosamente in divisa scolastica, le soglie della Sala Grande per essere smistati e seguire le lezioni. Le attività sono tante: Duelli, Quidditch, Giochi a tema, Ballo del Ceppo. A rendere il tutto più misterioso e insidioso c\'è però un Mago Oscuro che ci assedia ogni anno. Tenete alta la guardia, potreste essere proprio voi a dover salvare la situazione!\n\nPer qualsiasi informazione:</string>
+    <string name="infoapptext">\nQuesta è un\'app di riferimento agli incantesimi di Harry Potter utilizzata nell\'attività Club dei Duellanti durante i Raduni Nazionali dell\'Associazione Back to Hogwars. In tale occasione i giocatori si sfidano a duello come in un gioco di ruolo dal vivo.\nE\' stata pensata per essere consultata velocemente prima di un duello e per permettere ad i partecipanti di allenarsi e studiare gli incantesimi.\n\nPer qualsiasi problema riferito all\'applicazione rivolgersi a:</string>
+    <string name="disclaimer">Caput Draconis non è affiliata o sponsorizzata da J. K. Rowling, Warner Bros. o Time Warner. Harry Potter e i relativi diritti di pubblicazione © J. K. Rowling. I personaggi di Harry Potter, i nomi e i relativi termini sono marchio commerciale e © Warner Bros. Ent. Tutti i diritti riservati.</string>
 </resources>
