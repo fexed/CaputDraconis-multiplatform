@@ -1,6 +1,7 @@
 package com.fexed.caputdraconis.android
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -46,7 +47,7 @@ class SpellListActivity : ComponentActivity() {
 
             CaputDraconisTheme {
                 StandardScaffold(context = this, scaffoldState = rememberScaffoldState(), actions =  {
-                    IconButton(onClick = { }) {
+                    IconButton(onClick = { startActivity(Intent(baseContext, InfoActivity::class.java)) }) {
                         Icon(Icons.Filled.Info, getString(R.string.info))
                     }
                 }) {
