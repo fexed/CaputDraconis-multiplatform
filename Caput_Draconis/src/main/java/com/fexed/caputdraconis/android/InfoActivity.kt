@@ -1,13 +1,9 @@
 package com.fexed.caputdraconis.android
 
 import android.content.Context
-import android.icu.text.IDNA.Info
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.rememberScrollableState
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -16,11 +12,11 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.modifier.modifierLocalOf
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.fexed.caputdraconis.Platform
+import com.fexed.caputdraconis.getPlatform
 
 class InfoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -108,5 +104,9 @@ fun Credits(context: Context) {
         Text(text = context.getString(R.string.disclaimer),
             modifier = Modifier
                 .fillMaxWidth())
+        Text(text = getPlatform().getVersion(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp))
     }
 }
