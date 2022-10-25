@@ -11,6 +11,8 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -44,9 +46,9 @@ class SpellListActivity : ComponentActivity() {
 
             CaputDraconisTheme {
                 StandardScaffold(context = this, scaffoldState = rememberScaffoldState(), actions =  {
-                    Button(onClick = {
-                        /* TODO */
-                    }) { Text(text = getString(R.string.info)) }
+                    IconButton(onClick = { }) {
+                        Icon(Icons.Filled.Info, getString(R.string.info))
+                    }
                 }) {
                     LazyColumn(state = listState) {
                         item {
