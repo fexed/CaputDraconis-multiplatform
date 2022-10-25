@@ -44,8 +44,10 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar() {
                 ToolbarItem() {
-                    Button("info") {
+                    Button {
                         
+                    } label: {
+                        Image(systemName: "info")
                     }
                 }
             }
