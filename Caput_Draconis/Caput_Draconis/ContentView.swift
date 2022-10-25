@@ -41,7 +41,6 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("appname")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar() {
                 ToolbarItem() {
                     Button {
@@ -68,7 +67,7 @@ struct SpellElement: View {
                 Spacer()
             }
             HStack {
-                Text(spell.categoria).font(.body).multilineTextAlignment(.leading)
+                Text(spell.categoria).font(.footnote).multilineTextAlignment(.leading)
                 Spacer()
                 Text(spell.fonte).font(.caption).multilineTextAlignment(.trailing)
             }
