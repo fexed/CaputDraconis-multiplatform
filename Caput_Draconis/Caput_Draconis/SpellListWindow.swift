@@ -26,8 +26,8 @@ func getIOSSpell(spell: Spell) -> iOSSpell {
 
 struct SpellListWindow: View {
     @State private var isShowingCreditsWindow = false
-    @State var iosspells = loadSpells(spells: iOSSpellsLoader().LoadSpells())
-    @State var query = ""
+    @State private var iosspells = loadSpells(spells: iOSSpellsLoader().LoadSpells())
+    @State private var query = ""
     
     var body: some View {
         let spells = iOSSpellsLoader().LoadSpells()
@@ -41,7 +41,6 @@ struct SpellListWindow: View {
                     SpellElement(spell: iosspell)
                 }
             }
-            
             .navigationTitle("appname")
             .toolbar() {
                 ToolbarItem() {
