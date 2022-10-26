@@ -18,15 +18,18 @@ fun CaputDraconisTheme(
 ) {
     val colors = if (darkTheme) {
         darkColors(
-            primary = Color(0xFFBB86FC),
-            primaryVariant = Color(0xFF3700B3),
-            secondary = Color(0xFF03DAC5)
+            primary = Color(0xFFC56000),
+            primaryVariant = Color(0xFFFF8F00),
+            secondary = Color(0xFF1B1B1B),
+            secondaryVariant = Color(0xFF424242),
+            background = Color(0xFF0B0B0B)
         )
     } else {
         lightColors(
-            primary = Color(0xFF6200EE),
-            primaryVariant = Color(0xFF3700B3),
-            secondary = Color(0xFF03DAC5)
+            primary = Color(0xFFFFC046),
+            primaryVariant = Color(0xFFFF8F00),
+            secondary = Color(0xFF6D6D6D),
+            secondaryVariant = Color(0xFF424242)
         )
     }
     val typography = Typography(
@@ -37,7 +40,7 @@ fun CaputDraconisTheme(
         )
     )
     val shapes = Shapes(
-        small = RoundedCornerShape(4.dp),
+        small = RoundedCornerShape(8.dp),
         medium = RoundedCornerShape(4.dp),
         large = RoundedCornerShape(0.dp)
     )
