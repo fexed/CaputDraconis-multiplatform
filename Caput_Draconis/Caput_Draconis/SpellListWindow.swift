@@ -31,9 +31,9 @@ struct SpellListWindow: View {
     
     var body: some View {
         let spells = iOSSpellsLoader().LoadSpells()
-        let ProtegoSpell = getIOSSpell(spell: SpellsLoaderCompanion().ProtegoSpell)
-        let ScutumSpell = getIOSSpell(spell: SpellsLoaderCompanion().ScutumSpell)
-        let FiniteSpell = getIOSSpell(spell: SpellsLoaderCompanion().FiniteSpell)
+        let _ = getIOSSpell(spell: SpellsLoaderCompanion().ProtegoSpell)
+        let _ = getIOSSpell(spell: SpellsLoaderCompanion().ScutumSpell)
+        let _ = getIOSSpell(spell: SpellsLoaderCompanion().FiniteSpell)
         
         NavigationView {
             List {
