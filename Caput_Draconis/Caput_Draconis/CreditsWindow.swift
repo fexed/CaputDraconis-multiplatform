@@ -18,44 +18,44 @@ struct CreditsWindow: View {
                 Group {
                     Text(NSLocalizedString("ideazioneesviluppotext", comment: "")).font(.headline)
                     Text("Federico Matteoni").font(.body)
-                }.padding()
+                }.padding(.bottom)
                 
                 Group {
                     Text(NSLocalizedString("graficatext", comment: "")).font(.headline).multilineTextAlignment(.leading)
                     Text("Saverio Landini\nMartina Crucianelli").font(.body)
-                }.padding()
+                }.padding(.bottom)
                 
                 Group {
                     Text(NSLocalizedString("ideazionegiocotext", comment: "")).font(.headline).multilineTextAlignment(.leading)
                     Text("Saverio Landini").font(.body)
-                }.padding()
+                }.padding(.bottom)
                 
                 Group {
                     Text(NSLocalizedString("sceltaincantesimitext", comment: "")).font(.headline).multilineTextAlignment(.leading)
                     Text("Saverio Landini\nMatteo Mascagni\nJacopo Di Vito\n(Team Duelli)").font(.body)
-                }.padding()
+                }.padding(.bottom)
                 
                 Group {
                     Text(NSLocalizedString("fontieformuletext", comment: "")).font(.headline).multilineTextAlignment(.leading)
                     Text("Jacopo Di Vito").font(.body)
-                }.padding()
+                }.padding(.bottom)
                 
                 Group {
                     Text(NSLocalizedString("effettiecontrtext", comment: "")).font(.headline).multilineTextAlignment(.leading)
                     Text("Matteo Mascagni").font(.body)
-                }.padding()
+                }.padding(.bottom)
                 
                 Group {
                     Text(NSLocalizedString("supportoconsulenzatext", comment: "")).font(.headline).multilineTextAlignment(.leading)
                     Text("Mattia Coreno\nEleonora Ugolini").font(.body)
-                }.padding()
+                }.padding(.bottom)
                 
                 Group {
                     Text(NSLocalizedString("graziedirettivotext", comment: "")).font(.body).multilineTextAlignment(.leading)
                     Text(NSLocalizedString("grazieragazzitext", comment: "")).font(.body).multilineTextAlignment(.leading)
                     Text(NSLocalizedString("disclaimer", comment: "")).font(.body).multilineTextAlignment(.leading)
                     Text(vers).font(.body).multilineTextAlignment(.leading)
-                }.padding()
+                }.padding(.bottom)
             }
         }.navigationBarTitle(Text(NSLocalizedString("credits", comment: "")), displayMode:.automatic)
     }
