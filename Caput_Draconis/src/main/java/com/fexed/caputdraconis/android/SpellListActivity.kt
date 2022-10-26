@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -16,6 +17,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -54,7 +57,9 @@ class SpellListActivity : ComponentActivity() {
                     LazyColumn(state = listState) {
                         item {
                             TextField(
-                                modifier = Modifier.fillMaxWidth().padding(8.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(8.dp),
                                 value = query,
                                 onValueChange = { query = it },
                                 placeholder = { Text(getString(R.string.search)) }
@@ -81,7 +86,14 @@ fun StandardScaffold(context: Context, scaffoldState: ScaffoldState, actions: (@
         topBar = {
             TopAppBar(
                 title = { Text(context.getString(R.string.appname)) },
-                actions = actions
+                actions = actions,
+                navigationIcon = {
+                    Image(
+                        painterResource(R.drawable.shield),
+                        contentDescription = null,
+                        modifier = Modifier.padding(8.dp)
+                    )
+                }
             )
         }
     ){
