@@ -15,6 +15,7 @@ struct CreditsWindow: View {
     var body: some View {
         List {
             VStack {
+                Image("cd_logo")
                 Group {
                     Text(NSLocalizedString("ideazioneesviluppotext", comment: "")).font(.headline)
                     Text("Federico Matteoni").font(.body)
