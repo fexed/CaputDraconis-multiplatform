@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -11,8 +12,11 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fexed.caputdraconis.Platform
@@ -35,6 +39,26 @@ class InfoActivity : ComponentActivity() {
 }
 
 @Composable
+fun CreditBox(title: String, text: String) {
+    Surface(modifier = Modifier.padding(16.dp)) {
+        Column {
+            Text(text = title,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
+                fontSize = 20.sp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp))
+            Text(text = text,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp))
+        }
+    }
+}
+
+@Composable
 fun Credits(context: ComponentActivity) {
     Column(modifier = Modifier
         .padding(8.dp)
@@ -48,55 +72,41 @@ fun Credits(context: ComponentActivity) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp))
-        Text(text = context.getString(R.string.ideazioneesviluppotext),
-             fontWeight = FontWeight.Bold,
-             fontSize = 20.sp,
-             modifier = Modifier
-                 .fillMaxWidth()
-                 .padding(8.dp))
-        Text(text = "Federico Matteoni")
-        Text(text = context.getString(R.string.graficatext),
-             fontWeight = FontWeight.Bold,
-             fontSize = 20.sp,
-             modifier = Modifier
-                 .fillMaxWidth()
-                 .padding(8.dp))
-        Text(text = "Saverio Landini\nMartina Crucianelli")
-        Text(text = context.getString(R.string.ideazionegiocotext),
-             fontWeight = FontWeight.Bold,
-             fontSize = 20.sp,
-             modifier = Modifier
-                 .fillMaxWidth()
-                 .padding(8.dp))
-        Text(text = "Saverio Landini")
-        Text(text = context.getString(R.string.sceltaincantesimitext),
-            fontWeight = FontWeight.Bold,
-            fontSize = 20.sp,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp))
-        Text(text = "Saverio Landini\nMatteo Mascagni\nJacopo Di Vito\n(Team Duelli)")
-        Text(text = context.getString(R.string.fontieformuletext),
-            fontWeight = FontWeight.Bold,
-            fontSize = 20.sp,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp))
-        Text(text = "Jacopo Di Vito")
-        Text(text = context.getString(R.string.effettiecontrtext),
-            fontWeight = FontWeight.Bold,
-            fontSize = 20.sp,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp))
-        Text(text = "Matteo Mascagni")
-        Text(text = context.getString(R.string.supportoconsulenzatext),
-            fontWeight = FontWeight.Bold,
-            fontSize = 20.sp,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp))
-        Text(text = "Mattia Coreno\nEleonora Ugolini")
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Image(painterResource(id = R.mipmap.ic_launcher_foreground), contentDescription = null)
+        }
+        CreditBox(
+            title = context.getString(R.string.ideazioneesviluppotext),
+            text = "Federico Matteoni"
+        )
+        CreditBox(
+            title = context.getString(R.string.graficatext),
+            text = "Saverio Landini\nMartina Crucianelli"
+        )
+        CreditBox(
+            title = context.getString(R.string.ideazionegiocotext),
+            text = "Saverio Landini"
+        )
+        CreditBox(
+            title = context.getString(R.string.sceltaincantesimitext),
+            text = "Saverio Landini\nMatteo Mascagni\nJacopo Di Vito\n(Team Duelli)"
+        )
+        CreditBox(
+            title = context.getString(R.string.fontieformuletext),
+            text = "Jacopo Di Vito"
+        )
+        CreditBox(
+            title = context.getString(R.string.effettiecontrtext),
+            text = "Matteo Mascagni"
+        )
+        CreditBox(
+            title = context.getString(R.string.supportoconsulenzatext),
+            text = "Mattia Coreno\nEleonora Ugolini"
+        )
         Text(text = context.getString(R.string.graziedirettivotext),
             modifier = Modifier
                 .fillMaxWidth()
@@ -108,6 +118,7 @@ fun Credits(context: ComponentActivity) {
             modifier = Modifier
                 .fillMaxWidth())
         Text(text = getPlatform().getVersion(),
+            textAlign = TextAlign.Center,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp))
