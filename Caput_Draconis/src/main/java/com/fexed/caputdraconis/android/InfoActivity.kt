@@ -7,9 +7,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -27,7 +27,7 @@ class InfoActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Credits(context = baseContext)
+                    Credits(context = this)
                 }
             }
         }
@@ -35,11 +35,14 @@ class InfoActivity : ComponentActivity() {
 }
 
 @Composable
-fun Credits(context: Context) {
+fun Credits(context: ComponentActivity) {
     Column(modifier = Modifier
         .padding(8.dp)
         .verticalScroll(rememberScrollState()) ) {
-        Text(text = context.getString(R.string.appname),
+        IconButton(onClick = { context.onBackPressed() }) {
+            Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = null)
+        }
+        Text(text = context.getString(R.string.credits),
             fontWeight = FontWeight.Bold,
             fontSize = 24.sp,
             modifier = Modifier
