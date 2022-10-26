@@ -57,6 +57,6 @@ struct CreditsWindow: View {
                     Text(vers).font(.body).multilineTextAlignment(.leading)
                 }.padding()
             }
-        }.navigationBarTitle(Text("Credits"), displayMode:.automatic)
+        }.navigationBarTitle(Text(NSLocalizedString("credits", comment: "")), displayMode:.automatic)
     }
 }
