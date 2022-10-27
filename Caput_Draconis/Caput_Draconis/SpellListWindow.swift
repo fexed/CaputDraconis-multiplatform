@@ -1,4 +1,5 @@
 import SwiftUI
+import GoogleMobileAds
 import expelliarmus
 
 struct iOSSpell: Identifiable {
@@ -54,6 +55,7 @@ struct SpellListWindow: View {
                 }
             }
             .searchable(text: $query, prompt: "search")
+            SwiftUIBannerAd(adPosition: .bottom, adUnitId: "ca-app-pub-3940256099942544/2934735716")
         }
     }
 }

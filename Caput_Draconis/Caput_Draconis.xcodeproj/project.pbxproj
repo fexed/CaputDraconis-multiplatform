@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		636916E0AC4CA63FCE2D497C /* Pods_Caput_Draconis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C45EC2DA7D1A4F96E69CAB /* Pods_Caput_Draconis.framework */; };
 		7555FF83242A565900829871 /* SpellListWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* SpellListWindow.swift */; };
+		EB2B9C5B290B0F530002C1B6 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2B9C5A290B0F530002C1B6 /* BannerAd.swift */; };
 		EB5712C22909C68000C4AFC2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C12909C68000C4AFC2 /* Color.swift */; };
 		EB5712C52909C6FF00C4AFC2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C42909C6FF00C4AFC2 /* Constants.swift */; };
 		EB5712C72909C73600C4AFC2 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C62909C73600C4AFC2 /* UserDefaultsUtils.swift */; };
@@ -25,6 +26,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EB2B9C54290B0E880002C1B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBD1C18D29040E2F00663EE4 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B43874C6CBB50E7134FBEC24BABFE14F;
+			remoteInfo = GoogleUtilities;
+		};
+		EB2B9C56290B0E880002C1B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBD1C18D29040E2F00663EE4 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06FC5C9CF96D60C50FCD47D339C91951;
+			remoteInfo = nanopb;
+		};
+		EB2B9C58290B0E880002C1B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBD1C18D29040E2F00663EE4 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3347A1AB6546F0A3977529B8F199DC41;
+			remoteInfo = PromisesObjC;
+		};
 		EBD1C19229040E2F00663EE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EBD1C18D29040E2F00663EE4 /* Pods.xcodeproj */;
@@ -58,6 +80,7 @@
 		7555FF82242A565900829871 /* SpellListWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellListWindow.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCA26EAAAD1465AA4210360F /* Pods-Caput_Draconis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caput_Draconis.debug.xcconfig"; path = "Target Support Files/Pods-Caput_Draconis/Pods-Caput_Draconis.debug.xcconfig"; sourceTree = "<group>"; };
+		EB2B9C5A290B0F530002C1B6 /* BannerAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		EB5712C12909C68000C4AFC2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EB5712C42909C6FF00C4AFC2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB5712C62909C73600C4AFC2 /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
@@ -131,6 +154,7 @@
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 				EBA403D229086EE300A36880 /* CreditsWindow.swift */,
+				EB2B9C5A290B0F530002C1B6 /* BannerAd.swift */,
 			);
 			path = Caput_Draconis;
 			sourceTree = "<group>";
@@ -164,7 +188,10 @@
 		EBD1C18E29040E2F00663EE4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				EB2B9C55290B0E880002C1B6 /* GoogleUtilities */,
+				EB2B9C57290B0E880002C1B6 /* nanopb */,
 				EBD1C19329040E2F00663EE4 /* Pods-Caput_Draconis */,
+				EB2B9C59290B0E880002C1B6 /* PromisesObjC */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +219,7 @@
 				7555FF79242A565900829871 /* Resources */,
 				EF14D42DA2955151CCFAC27A /* Frameworks */,
 				EBD1C1992904105100663EE4 /* Embed Frameworks */,
+				58A4E4F04481EB30ABA540BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,6 +271,30 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		EB2B9C55290B0E880002C1B6 /* GoogleUtilities */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = GoogleUtilities;
+			path = GoogleUtilities.framework;
+			remoteRef = EB2B9C54290B0E880002C1B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB2B9C57290B0E880002C1B6 /* nanopb */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = nanopb;
+			path = nanopb.framework;
+			remoteRef = EB2B9C56290B0E880002C1B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB2B9C59290B0E880002C1B6 /* PromisesObjC */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = PromisesObjC;
+			path = FBLPromises.framework;
+			remoteRef = EB2B9C58290B0E880002C1B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		EBD1C19329040E2F00663EE4 /* Pods-Caput_Draconis */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -292,6 +344,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		58A4E4F04481EB30ABA540BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Caput_Draconis/Pods-Caput_Draconis-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Caput_Draconis/Pods-Caput_Draconis-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Caput_Draconis/Pods-Caput_Draconis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -300,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5712C52909C6FF00C4AFC2 /* Constants.swift in Sources */,
+				EB2B9C5B290B0F530002C1B6 /* BannerAd.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				EB5712C72909C73600C4AFC2 /* UserDefaultsUtils.swift in Sources */,
 				EB5712C22909C68000C4AFC2 /* Color.swift in Sources */,
