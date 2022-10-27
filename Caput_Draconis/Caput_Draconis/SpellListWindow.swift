@@ -68,7 +68,7 @@ struct SpellListWindow: View {
                         } label: {
                             Text("Game")
                                 .font(.system(.largeTitle))
-                                .frame(width: 77, height: 70)
+                                .frame(width: 56, height: 49)
                                 .foregroundColor(Color.white)
                                 .padding(.bottom, 7)
                         }
