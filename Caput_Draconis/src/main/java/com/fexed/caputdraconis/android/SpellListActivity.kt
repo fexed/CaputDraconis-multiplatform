@@ -102,6 +102,12 @@ fun StandardScaffold(context: Context, scaffoldState: ScaffoldState, actions: (@
         },
         bottomBar = {
             Banner(bannerId = "ca-app-pub-3940256099942544/2934735716")
+        },
+        floatingActionButtonPosition = FabPosition.End,
+        floatingActionButton = {
+            FloatingActionButton(onClick = { /*TODO*/ }, backgroundColor = MaterialTheme.colors.primaryVariant) {
+                Text(text = "Game")
+            }
         }
     ){
         Surface(
