@@ -37,25 +37,47 @@ struct SpellListWindow: View {
         let _ = getIOSSpell(spell: SpellsLoaderCompanion().FiniteSpell)
         
         NavigationView {
-            List {
-                ForEach(loadSpells(spells: SpellListUtility.companion.Search(query: query, spellList: spells))) { iosspell in
-                    SpellElement(spell: iosspell)
+            ZStack {
+                List {
+                    ForEach(loadSpells(spells: SpellListUtility.companion.Search(query: query, spellList: spells))) { iosspell in
+                        SpellElement(spell: iosspell)
+                    }
                 }
-            }
-            .navigationTitle("appname")
-            .toolbar() {
-                ToolbarItem() {
-                    NavigationLink(destination: CreditsWindow(), isActive: $isShowingCreditsWindow) {
-                        Button {
-                            isShowingCreditsWindow = true
-                        } label: {
-                            Image(systemName: "info")
+                .navigationTitle("appname")
+                .toolbar() {
+                    ToolbarItem() {
+                        NavigationLink(destination: CreditsWindow(), isActive: $isShowingCreditsWindow) {
+                            Button {
+                                isShowingCreditsWindow = true
+                            } label: {
+                                Image(systemName: "info")
+                            }
                         }
                     }
                 }
+                .searchable(text: $query, prompt: "search")
+                
+                SwiftUIBannerAd(adPosition: .bottom, adUnitId: "ca-app-pub-3940256099942544/2934735716")
+                
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button {
+                            
+                        } label: {
+                            Text("Game")
+                                .font(.system(.largeTitle))
+                                .frame(width: 77, height: 70)
+                                .foregroundColor(Color.white)
+                                .padding(.bottom, 7)
+                        }
+                        .background(Color.blue)
+                        .cornerRadius(38.5)
+                        .padding()
+                    }
+                }
             }
-            .searchable(text: $query, prompt: "search")
-            SwiftUIBannerAd(adPosition: .bottom, adUnitId: "ca-app-pub-3940256099942544/2934735716")
         }
     }
 }
