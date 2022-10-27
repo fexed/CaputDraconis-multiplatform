@@ -78,7 +78,6 @@ class SpellListActivity : ComponentActivity() {
                             listState.scrollToItem(1)
                         }
                     }
-                    Banner(bannerId = "ca-app-pub-3940256099942544/6300978111")
                 }
             }
         }
@@ -100,6 +99,9 @@ fun StandardScaffold(context: Context, scaffoldState: ScaffoldState, actions: (@
                     )
                 }
             )
+        },
+        bottomBar = {
+            Banner(bannerId = "ca-app-pub-3940256099942544/2934735716")
         }
     ){
         Surface(
