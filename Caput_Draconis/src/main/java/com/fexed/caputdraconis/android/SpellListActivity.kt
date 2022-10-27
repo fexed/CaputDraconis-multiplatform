@@ -24,12 +24,16 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.window.Dialog
 import com.fexed.caputdraconis.AndroidSpellsLoader.Companion.CSVFile
 import com.fexed.caputdraconis.Spell
 import com.fexed.caputdraconis.SpellListUtility
 
 import com.fexed.caputdraconis.getSpellsLoader
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -74,6 +78,7 @@ class SpellListActivity : ComponentActivity() {
                             listState.scrollToItem(1)
                         }
                     }
+                    Banner(bannerId = "ca-app-pub-3940256099942544/6300978111")
                 }
             }
         }
@@ -164,4 +169,16 @@ fun SpellDialog(context: Context, spell: Spell, onClose: () -> Unit) {
             }
         }
     }
+}
+
+@Composable
+fun Banner(bannerId: String) {
+    AndroidView( modifier = Modifier.fillMaxWidth(),
+        factory = { context ->
+        AdView(context).apply {
+            setAdSize(AdSize.BANNER)
+            adUnitId = bannerId
+            loadAd(AdRequest.Builder().build())
+        }
+    })
 }
