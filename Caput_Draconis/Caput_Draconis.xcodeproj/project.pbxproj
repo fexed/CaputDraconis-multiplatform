@@ -18,7 +18,6 @@
 		EB5712C72909C73600C4AFC2 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C62909C73600C4AFC2 /* UserDefaultsUtils.swift */; };
 		EBA403D329086EE300A36880 /* CreditsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA403D229086EE300A36880 /* CreditsWindow.swift */; };
 		EBD1C1972904105100663EE4 /* Pods-Caput_Draconis in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD1C19329040E2F00663EE4 /* Pods-Caput_Draconis */; };
-		EBD1C1982904105100663EE4 /* Pods-Caput_Draconis in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBD1C19329040E2F00663EE4 /* Pods-Caput_Draconis */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EBD1C1A82905B66600663EE4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1AA2905B66600663EE4 /* Localizable.strings */; };
 		EBD1C1B02905B8C000663EE4 /* Incantesimi.csv in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1AD2905B8C000663EE4 /* Incantesimi.csv */; };
 		EBD1C1B12905B8C000663EE4 /* Regolamento-Duelli-2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1AE2905B8C000663EE4 /* Regolamento-Duelli-2.pdf */; };
@@ -55,20 +54,6 @@
 			remoteInfo = "Pods-Caput_Draconis";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		EBD1C1992904105100663EE4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				EBD1C1982904105100663EE4 /* Pods-Caput_Draconis in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,7 +203,6 @@
 				7555FF77242A565900829871 /* Sources */,
 				7555FF79242A565900829871 /* Resources */,
 				EF14D42DA2955151CCFAC27A /* Frameworks */,
-				EBD1C1992904105100663EE4 /* Embed Frameworks */,
 				58A4E4F04481EB30ABA540BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -526,6 +510,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				PRODUCT_BUNDLE_IDENTIFIER = "fexed.Caput-Draconis";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -548,6 +533,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				PRODUCT_BUNDLE_IDENTIFIER = "fexed.Caput-Draconis";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
