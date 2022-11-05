@@ -56,6 +56,7 @@ struct SpellListWindow: View {
                     }
                 }
                 .searchable(text: $query, prompt: "search")
+                .padding(.bottom, 16)
                 
                 SwiftUIBannerAd(adPosition: .bottom, adUnitId: "ca-app-pub-3940256099942544/2934735716")
                 
@@ -66,17 +67,17 @@ struct SpellListWindow: View {
                         Button {
                             
                         } label: {
-                            Text("Game")
-                                .font(.system(.largeTitle))
-                                .frame(width: 56, height: 49)
+                            Text(NSLocalizedString("minigame", comment: ""))
+                                .font(.system(.footnote))
                                 .foregroundColor(Color.white)
-                                .padding(.bottom, 7)
+                                .padding(16)
                         }
                         .background(Color.blue)
                         .cornerRadius(38.5)
                         .padding()
                     }
                 }
+                .padding(.bottom, 16)
             }
         }
     }
