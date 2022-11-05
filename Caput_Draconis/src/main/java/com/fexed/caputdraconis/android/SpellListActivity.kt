@@ -104,9 +104,10 @@ fun StandardScaffold(context: Context, scaffoldState: ScaffoldState, actions: (@
         },
         floatingActionButtonPosition = FabPosition.End,
         floatingActionButton = {
-            FloatingActionButton(onClick = { /*TODO*/ }, backgroundColor = MaterialTheme.colors.primaryVariant) {
-                Text(text = "Game")
-            }
+            ExtendedFloatingActionButton( text = {
+                    Text(context.getString(R.string.minigame))
+                },
+                onClick = { /*TODO*/ }, backgroundColor = MaterialTheme.colors.primaryVariant)
         }
     ){
         Surface(
