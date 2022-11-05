@@ -18,43 +18,55 @@ struct CreditsWindow: View {
                 Image("cd_logo")
                 Group {
                     Text(NSLocalizedString("ideazioneesviluppotext", comment: "")).font(.headline)
-                    Text("Federico Matteoni").font(.body)
+                    Text("Federico Matteoni").font(.body).multilineTextAlignment(.center)
                 }.padding(.bottom)
                 
                 Group {
-                    Text(NSLocalizedString("graficatext", comment: "")).font(.headline).multilineTextAlignment(.leading)
-                    Text("Saverio Landini\nMartina Crucianelli").font(.body)
+                    Text(NSLocalizedString("graficatext", comment: "")).font(.headline).multilineTextAlignment(.center)
+                    Text("Saverio Landini\nMartina Crucianelli").font(.body).multilineTextAlignment(.center)
                 }.padding(.bottom)
                 
                 Group {
-                    Text(NSLocalizedString("ideazionegiocotext", comment: "")).font(.headline).multilineTextAlignment(.leading)
-                    Text("Saverio Landini").font(.body)
+                    Text(NSLocalizedString("ideazionegiocotext", comment: "")).font(.headline).multilineTextAlignment(.center)
+                    Text("Saverio Landini").font(.body).multilineTextAlignment(.center)
                 }.padding(.bottom)
                 
                 Group {
-                    Text(NSLocalizedString("sceltaincantesimitext", comment: "")).font(.headline).multilineTextAlignment(.leading)
-                    Text("Saverio Landini\nMatteo Mascagni\nJacopo Di Vito\n(Team Duelli)").font(.body)
+                    Text(NSLocalizedString("sceltaincantesimitext", comment: "")).font(.headline).multilineTextAlignment(.center)
+                    Text("Saverio Landini\nMatteo Mascagni\nJacopo Di Vito\n(Team Duelli)").font(.body).multilineTextAlignment(.center)
                 }.padding(.bottom)
                 
                 Group {
-                    Text(NSLocalizedString("fontieformuletext", comment: "")).font(.headline).multilineTextAlignment(.leading)
-                    Text("Jacopo Di Vito").font(.body)
+                    Text(NSLocalizedString("fontieformuletext", comment: "")).font(.headline).multilineTextAlignment(.center)
+                    Text("Jacopo Di Vito").font(.body).multilineTextAlignment(.center)
                 }.padding(.bottom)
                 
                 Group {
-                    Text(NSLocalizedString("effettiecontrtext", comment: "")).font(.headline).multilineTextAlignment(.leading)
-                    Text("Matteo Mascagni").font(.body)
+                    Text(NSLocalizedString("effettiecontrtext", comment: "")).font(.headline).multilineTextAlignment(.center)
+                    Text("Matteo Mascagni").font(.body).multilineTextAlignment(.center)
                 }.padding(.bottom)
                 
                 Group {
-                    Text(NSLocalizedString("supportoconsulenzatext", comment: "")).font(.headline).multilineTextAlignment(.leading)
-                    Text("Mattia Coreno\nEleonora Ugolini").font(.body)
+                    Text(NSLocalizedString("supportoconsulenzatext", comment: "")).font(.headline).multilineTextAlignment(.center)
+                    Text("Mattia Coreno\nEleonora Ugolini").font(.body).multilineTextAlignment(.center)
                 }.padding(.bottom)
                 
                 Group {
-                    Text(NSLocalizedString("graziedirettivotext", comment: "")).font(.body).multilineTextAlignment(.leading)
-                    Text(NSLocalizedString("grazieragazzitext", comment: "")).font(.body).multilineTextAlignment(.leading)
-                    Text(NSLocalizedString("disclaimer", comment: "")).font(.body).multilineTextAlignment(.leading)
+                    Text(NSLocalizedString("graziedirettivotext", comment: "")).font(.body).multilineTextAlignment(.leading).frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        alignment: .topLeading
+                      )
+                    Text(NSLocalizedString("grazieragazzitext", comment: "")).font(.body).multilineTextAlignment(.leading).frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        alignment: .topLeading
+                      )
+                    Text(NSLocalizedString("disclaimer", comment: "")).font(.body).multilineTextAlignment(.leading).frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        alignment: .topLeading
+                      )
                     Text(vers).font(.body).multilineTextAlignment(.leading)
                 }.padding(.bottom)
             }
