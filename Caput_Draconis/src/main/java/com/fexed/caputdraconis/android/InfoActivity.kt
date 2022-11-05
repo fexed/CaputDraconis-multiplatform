@@ -8,6 +8,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -15,9 +16,13 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fexed.caputdraconis.Platform
@@ -120,6 +125,37 @@ fun Credits(context: ComponentActivity) {
         Text(text = context.getString(R.string.grazieragazzitext),
             modifier = Modifier
                 .fillMaxWidth())
+
+        val annotatedString = buildAnnotatedString {
+            pushStringAnnotation(tag = "policy", annotation = "https://www.facebook.com/associazionecaputdraconis")
+            withStyle(style = SpanStyle(color = MaterialTheme.colors.primary)) {
+                append(context.getString(R.string.cdfacebook))
+            }
+            pop()
+
+            append("\n")
+
+            pushStringAnnotation(tag = "terms", annotation = "http://www.caputdraconis.it")
+
+            withStyle(style = SpanStyle(color = MaterialTheme.colors.primary)) {
+                append(context.getString(R.string.cdwebsite))
+            }
+
+            pop()
+        }
+
+        val uriHandler = LocalUriHandler.current
+
+        ClickableText(text = annotatedString, onClick = { offset ->
+            annotatedString.getStringAnnotations(tag = "policy", start = offset, end = offset).firstOrNull()?.let {
+                uriHandler.openUri(it.item)
+            }
+
+            annotatedString.getStringAnnotations(tag = "terms", start = offset, end = offset).firstOrNull()?.let {
+                uriHandler.openUri(it.item)
+            }
+        })
+
         Text(text = context.getString(R.string.disclaimer),
             modifier = Modifier
                 .fillMaxWidth()
