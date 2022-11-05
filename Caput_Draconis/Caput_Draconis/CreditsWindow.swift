@@ -62,6 +62,16 @@ struct CreditsWindow: View {
                         maxWidth: .infinity,
                         alignment: .topLeading
                       )
+                    Text(.init(NSLocalizedString("cdfacebook", comment: ""))).font(.body).multilineTextAlignment(.leading).frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        alignment: .topLeading
+                      )
+                    Text(.init(NSLocalizedString("cdwebsite", comment: ""))).font(.body).multilineTextAlignment(.leading).frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        alignment: .topLeading
+                      )
                     Text(NSLocalizedString("disclaimer", comment: "")).font(.body).multilineTextAlignment(.leading).frame(
                         minWidth: 0,
                         maxWidth: .infinity,
