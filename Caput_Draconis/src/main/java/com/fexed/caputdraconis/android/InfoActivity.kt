@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -63,8 +64,13 @@ fun Credits(context: ComponentActivity) {
     Column(modifier = Modifier
         .padding(8.dp)
         .verticalScroll(rememberScrollState()) ) {
-        IconButton(onClick = { context.onBackPressed() }) {
-            Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = null)
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            IconButton(onClick = { context.onBackPressed() }) {
+                Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = null)
+            }
+            Text(text = context.getString(R.string.back),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.clickable { context.onBackPressed() } )
         }
         Text(text = context.getString(R.string.credits),
             fontWeight = FontWeight.Bold,
