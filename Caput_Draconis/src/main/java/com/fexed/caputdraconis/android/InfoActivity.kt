@@ -110,13 +110,14 @@ fun Credits(context: ComponentActivity) {
         Text(text = context.getString(R.string.graziedirettivotext),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(0.dp, 8.dp, 0.dp, 0.dp))
+                .padding(0.dp, 8.dp, 0.dp, 8.dp))
         Text(text = context.getString(R.string.grazieragazzitext),
             modifier = Modifier
                 .fillMaxWidth())
         Text(text = context.getString(R.string.disclaimer),
             modifier = Modifier
-                .fillMaxWidth())
+                .fillMaxWidth()
+                .padding(0.dp, 8.dp, 0.dp, 8.dp))
         Text(text = getPlatform().getVersion(),
             textAlign = TextAlign.Center,
             modifier = Modifier
