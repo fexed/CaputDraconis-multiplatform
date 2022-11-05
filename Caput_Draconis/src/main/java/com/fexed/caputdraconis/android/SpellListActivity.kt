@@ -93,9 +93,8 @@ fun StandardScaffold(context: Context, scaffoldState: ScaffoldState, actions: (@
                 actions = actions,
                 navigationIcon = {
                     Image(
-                        painterResource(R.drawable.shield),
-                        contentDescription = null,
-                        modifier = Modifier.padding(8.dp)
+                        painterResource(R.mipmap.ic_launcher_foreground),
+                        contentDescription = null
                     )
                 }
             )
