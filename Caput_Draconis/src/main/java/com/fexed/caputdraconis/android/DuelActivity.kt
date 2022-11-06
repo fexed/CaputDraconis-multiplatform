@@ -1,11 +1,8 @@
 package com.fexed.caputdraconis.android
 
-import android.content.Context
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -15,11 +12,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.fexed.caputdraconis.Preferences
+import com.fexed.caputdraconis.duels.DuelUtility
 
 class DuelActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -101,16 +99,8 @@ class DuelActivity : ComponentActivity() {
             .wrapContentHeight()) {
             Column {
                 Row(modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-                    Text(text = "prova scritta")
-                    Text(text = "42", modifier = Modifier.padding(0.dp, 0.dp, 24.dp, 0.dp))
-                }
-                Row(modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-                    Text(text = "prova scritta un po' più lunga")
-                    Text(text = "42", modifier = Modifier.padding(0.dp, 0.dp, 24.dp, 0.dp))
-                }
-                Row(modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-                    Text(text = "smol")
-                    Text(text = "42", modifier = Modifier.padding(0.dp, 0.dp, 24.dp, 0.dp))
+                    Text(text = context.getString(R.string.incnumb))
+                    Text(text = DuelUtility.getTotalSpellsNumber(context).toString(), modifier = Modifier.padding(0.dp, 0.dp, 24.dp, 0.dp))
                 }
             }
         }
