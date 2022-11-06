@@ -8,6 +8,6 @@ class DuelTest {
     fun testTimer() {
         val timer = Timer()
 
-        timer.startTimer()
+        timer.startDuelTimer()
     }
 }
