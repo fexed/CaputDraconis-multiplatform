@@ -22,5 +22,9 @@ struct iOSApp: App {
         WindowGroup("Credits") {
             CreditsWindow()
         }.handlesExternalEvents(matching: Set(arrayLiteral: "Credits"))
+        
+        WindowGroup("Duel") {
+            DuelWindow()
+        }.handlesExternalEvents(matching: Set(arrayLiteral: "Duel"))
 	}
 }

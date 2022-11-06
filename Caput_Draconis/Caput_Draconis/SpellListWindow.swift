@@ -27,6 +27,7 @@ func getIOSSpell(spell: Spell) -> iOSSpell {
 
 struct SpellListWindow: View {
     @State private var isShowingCreditsWindow = false
+    @State private var isShowingDuelWindow = false
     @State private var iosspells = loadSpells(spells: iOSSpellsLoader().LoadSpells())
     @State private var query = ""
     
@@ -64,14 +65,17 @@ struct SpellListWindow: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        Button {
-                            
-                        } label: {
-                            Text(NSLocalizedString("minigame", comment: ""))
-                                .font(.system(.footnote))
-                                .foregroundColor(Color.white)
-                                .padding(16)
+                        NavigationLink(destination: DuelWindow(), isActive: $isShowingDuelWindow) {
+                            Button {
+                                isShowingDuelWindow = true
+                            } label: {
+                                Text(NSLocalizedString("minigame", comment: ""))
+                                    .font(.system(.footnote))
+                                    .foregroundColor(Color.white)
+                                    .padding(16)
+                            }
                         }
+                        
                         .background(Color.blue)
                         .cornerRadius(38.5)
                         .padding()

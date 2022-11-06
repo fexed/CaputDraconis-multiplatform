@@ -13,6 +13,7 @@
 		636916E0AC4CA63FCE2D497C /* Pods_Caput_Draconis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C45EC2DA7D1A4F96E69CAB /* Pods_Caput_Draconis.framework */; };
 		7555FF83242A565900829871 /* SpellListWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* SpellListWindow.swift */; };
 		EB2B9C5B290B0F530002C1B6 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2B9C5A290B0F530002C1B6 /* BannerAd.swift */; };
+		EB48CE182917B81C0007CC49 /* DuelWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48CE172917B81C0007CC49 /* DuelWindow.swift */; };
 		EB5712C22909C68000C4AFC2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C12909C68000C4AFC2 /* Color.swift */; };
 		EB5712C52909C6FF00C4AFC2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C42909C6FF00C4AFC2 /* Constants.swift */; };
 		EB5712C72909C73600C4AFC2 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C62909C73600C4AFC2 /* UserDefaultsUtils.swift */; };
@@ -66,6 +67,7 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCA26EAAAD1465AA4210360F /* Pods-Caput_Draconis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caput_Draconis.debug.xcconfig"; path = "Target Support Files/Pods-Caput_Draconis/Pods-Caput_Draconis.debug.xcconfig"; sourceTree = "<group>"; };
 		EB2B9C5A290B0F530002C1B6 /* BannerAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
+		EB48CE172917B81C0007CC49 /* DuelWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuelWindow.swift; sourceTree = "<group>"; };
 		EB5712C12909C68000C4AFC2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EB5712C42909C6FF00C4AFC2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB5712C62909C73600C4AFC2 /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 				EBA403D229086EE300A36880 /* CreditsWindow.swift */,
 				EB2B9C5A290B0F530002C1B6 /* BannerAd.swift */,
+				EB48CE172917B81C0007CC49 /* DuelWindow.swift */,
 			);
 			path = Caput_Draconis;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				EB5712C72909C73600C4AFC2 /* UserDefaultsUtils.swift in Sources */,
 				EB5712C22909C68000C4AFC2 /* Color.swift in Sources */,
+				EB48CE182917B81C0007CC49 /* DuelWindow.swift in Sources */,
 				7555FF83242A565900829871 /* SpellListWindow.swift in Sources */,
 				EBA403D329086EE300A36880 /* CreditsWindow.swift in Sources */,
 			);

@@ -12,6 +12,7 @@
 "info" = "Info";
 "credits" = "Credits";
 "minigame" = "Duel";
+"play" = "Play";
 
 "spells" = "Spells";
 "name" = "Name";
@@ -35,3 +36,15 @@
 "infocdtext" = "Caput Draconis\n\nAre you still waiting for your letter? Thanks to BTH, you get the chance to experience in first person the world\'s most famous School of Witchcraft and Wizardry.\nFor five days, BTH offers an immersive experience to its members: from a stay at a themed hotel to lessons to follow in the Great Hall, strictly in uniform!\n\nThis is an italian association.\nFor all info:";
 "infoapptext" = "This is a reference app that contains the Harry Potter\'s spells used during the Duelists Club that takes place during the events organized by Caput Draconis. During the event the players challenge each other like in a LARP.\n\nThis app is thought to be consulted briefly before a duel and to give a document on which to study to prepare for the duels.\n\nFor any app-related issue, please contact:";
 "disclaimer" = "Caput Draconis is not affiliated or endorsed by J. K. Rowling, Warner Bros. or Time Warner. Harry Potter and Related Publishing Rights © J. K. Rowling. Harry Potter characters, names and related indicia are trademarks of and © Warner Bros. Ent. All Rights Reserved.";
+
+"survmode" = "Survival mode";
+"selectmode" = "Mode Select";
+"arcademode" = "Arcade Mode";
+"timermode" = "Timer Mode";
+"survmodedesc" = "Until the first error! Make as many consecutive points as you can.";
+"arcademodedesc" = "Maximum 3 errors! No time limit.";
+"timermodedesc" = "One minute! Make as many points as you can.";
+"tienipremutotxt" = "Tap and hold on the mode name to know what that mode is about!";
+"hiscoretitle" = "High Scores";
+"incnumb" = "Number of spells";
+"descrgiocotext" = "The training minigame has three play modes:";

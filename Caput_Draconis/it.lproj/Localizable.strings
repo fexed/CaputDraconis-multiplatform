@@ -12,6 +12,7 @@
 "info" = "Info";
 "credits" = "Crediti";
 "minigame" = "Duella";
+"play" = "Gioca";
 
 "spells" = "Incantesimi";
 "name" = "Nome";
@@ -35,3 +36,15 @@
 "infocdtext" = "Caput Draconis\n\nStai ancora aspettando la tua lettera per Hogwarts? L\'attesa è finita!\n\nOgni anno grazie a BTH avrai la possibilità di vivere in prima persona l\'esperienza della Scuola di Magia più famosa al mondo.\nL\'Associazione Caput Draconis offre, per cinque giorni, ai propri tesserati un\'esperienza immersiva: potrete soggiornare in un hotel allestito a tema e varcare, rigorosamente in divisa scolastica, le soglie della Sala Grande per essere smistati e seguire le lezioni. Le attività sono tante: Duelli, Quidditch, Giochi a tema, Ballo del Ceppo. A rendere il tutto più misterioso e insidioso c\'è però un Mago Oscuro che ci assedia ogni anno. Tenete alta la guardia, potreste essere proprio voi a dover salvare la situazione!\n\nPer qualsiasi informazione:";
 "infoapptext" = "Questa è un\'app di riferimento agli incantesimi di Harry Potter utilizzata nell\'attività Club dei Duellanti durante i Raduni Nazionali dell\'Associazione Back to Hogwars. In tale occasione i giocatori si sfidano a duello come in un gioco di ruolo dal vivo.\nE\' stata pensata per essere consultata velocemente prima di un duello e per permettere ad i partecipanti di allenarsi e studiare gli incantesimi.\n\nPer qualsiasi problema riferito all\'applicazione rivolgersi a:";
 "disclaimer" = "Caput Draconis non è affiliata o sponsorizzata da J. K. Rowling, Warner Bros. o Time Warner. Harry Potter e i relativi diritti di pubblicazione © J. K. Rowling. I personaggi di Harry Potter, i nomi e i relativi termini sono marchio commerciale e © Warner Bros. Ent. Tutti i diritti riservati.";
+
+"survmode" = "Modalità Survival";
+"selectmode" = "Modalità";
+"arcademode" = "Modalità Arcade";
+"timermode" = "Modalità Timer";
+"survmodedesc" = "Fino al primo errore! Fai quanti più punti consecutivi.";
+"arcademodedesc" = "Massimo 3 errori! Senza limite di tempo.";
+"timermodedesc" = "Un minuto! Fai quanti più punti possibile.";
+"tienipremutotxt" = "Tieni premuto per sapere in cosa consiste ciascuna modalità!";
+"hiscoretitle" = "Punteggi";
+"incnumb" = "Numero di incantesimi";
+"descrgiocotext" = "Il minigioco di allenamento ha tre modalità:";
