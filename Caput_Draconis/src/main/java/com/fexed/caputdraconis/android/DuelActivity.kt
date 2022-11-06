@@ -1,19 +1,25 @@
 package com.fexed.caputdraconis.android
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.RowScope
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 class DuelActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +39,80 @@ class DuelActivity : ComponentActivity() {
     @Composable
     fun MainMenu(context: ComponentActivity) {
         StandardScaffold(context = context, scaffoldState = rememberScaffoldState(), actions = {}) {
+            Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
+                Stats(context)
+                ModeCard(
+                    title = context.getString(R.string.survmode),
+                    desc = context.getString(R.string.survmodedesc),
+                    buttontxt = context.getString(R.string.play),
+                    button = { /* TODO */ }
+                )
+                ModeCard(
+                    title = context.getString(R.string.arcademode),
+                    desc = context.getString(R.string.arcademodedesc),
+                    buttontxt = context.getString(R.string.play),
+                    button = { /* TODO */ }
+                )
+                ModeCard(
+                    title = context.getString(R.string.timermode),
+                    desc = context.getString(R.string.timermodedesc),
+                    buttontxt = context.getString(R.string.play),
+                    button = { /* TODO */ }
+                )
+            }
+        }
+    }
 
+    @Composable
+    fun ModeCard(title: String, desc: String, buttontxt: String, button: (() -> Unit)) {
+        Surface(modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth()
+            .wrapContentHeight()) {
+            Column {
+                Text(text = title,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    fontSize = 20.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp))
+                Text(text = desc,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp))
+                Row(modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight(), horizontalArrangement = Arrangement.Center) {
+                    Button(onClick = button) {
+                        Text(text = buttontxt)
+                    }
+                }
+            }
+        }
+    }
+
+    @Composable
+    fun Stats(context: ComponentActivity) {
+        Surface(modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth()
+            .wrapContentHeight()) {
+            Column {
+                Row(modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+                    Text(text = "prova scritta")
+                    Text(text = "42", modifier = Modifier.padding(0.dp, 0.dp, 24.dp, 0.dp))
+                }
+                Row(modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+                    Text(text = "prova scritta un po' più lunga")
+                    Text(text = "42", modifier = Modifier.padding(0.dp, 0.dp, 24.dp, 0.dp))
+                }
+                Row(modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+                    Text(text = "smol")
+                    Text(text = "42", modifier = Modifier.padding(0.dp, 0.dp, 24.dp, 0.dp))
+                }
+            }
         }
     }
 
