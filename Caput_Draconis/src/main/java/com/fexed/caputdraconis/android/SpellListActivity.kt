@@ -98,7 +98,7 @@ fun StandardScaffold(context: ComponentActivity, scaffoldState: ScaffoldState, a
             )
         },
         bottomBar = {
-            Banner(bannerId = "ca-app-pub-3940256099942544/2934735716")
+            Banner(bannerId = context.getString(R.string.test_banner_id))
         },
         floatingActionButtonPosition = FabPosition.End,
         floatingActionButton = {
