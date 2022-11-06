@@ -16,8 +16,15 @@ struct DuelWindow: View {
 }
 
 struct MainMenu: View {
+    let totalspells = DuelUtility.companion.getTotalSpellsNumber(prefs: NSObject())
     var body: some View {
         VStack {
+            Text(NSLocalizedString("minigame", comment: "")).font(.title).padding()
+            HStack {
+                Text(NSLocalizedString("incnumb", comment: "")).padding()
+                Spacer()
+                Text(String(totalspells)).padding()
+            }.padding()
             Text(NSLocalizedString("selectmode", comment: "")).font(.headline)
             ModeCard(title: NSLocalizedString("survmode", comment: ""), desc: NSLocalizedString("survmodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: ""))
             ModeCard(title: NSLocalizedString("arcademode", comment: ""), desc: NSLocalizedString("arcademodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: ""))
