@@ -2,6 +2,7 @@ package com.fexed.caputdraconis.duels.android
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.clickable
@@ -11,7 +12,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -25,6 +26,8 @@ import com.fexed.caputdraconis.android.R
 import com.fexed.caputdraconis.duels.DuelUtility
 
 class DuelActivity : ComponentActivity() {
+    lateinit var spellcount: MutableState<String>
+
     companion object {
         fun checkSpell(currentSpell: Spell, defensiveSpell: String): Boolean {
             return (currentSpell.difinc.lowercase().contains(defensiveSpell.lowercase()))
@@ -38,6 +41,9 @@ class DuelActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            spellcount = remember {
+                mutableStateOf(DuelUtility.getTotalSpellsNumber(this).toString())
+            }
             CaputDraconisTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -47,6 +53,12 @@ class DuelActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (::spellcount.isInitialized)
+            spellcount.value = DuelUtility.getTotalSpellsNumber(this).toString()
     }
 
     @Composable
@@ -125,7 +137,7 @@ class DuelActivity : ComponentActivity() {
                     .wrapContentHeight()
                     .padding(8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                     Text(text = context.getString(R.string.incnumb))
-                    Text(text = DuelUtility.getTotalSpellsNumber(context).toString(), modifier = Modifier.padding(0.dp, 0.dp, 24.dp, 0.dp))
+                    Text(text = spellcount.value, modifier = Modifier.padding(0.dp, 0.dp, 24.dp, 0.dp))
                 }
             }
         }
