@@ -1,6 +1,5 @@
 package com.fexed.caputdraconis.android
 
-import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -25,7 +24,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.fexed.caputdraconis.Platform
 import com.fexed.caputdraconis.getPlatform
 
 class InfoActivity : ComponentActivity() {

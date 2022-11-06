@@ -12,7 +12,6 @@ class AndroidSpellsLoader: SpellsLoader {
 
     override fun GetCSVFromAssets(): String {
         var output = ""
-        Log.d("SPELLS", "Loading CSV")
         with(CSVFile) {
             output = BufferedReader(InputStreamReader(this)).useLines { lines ->
                 val results = StringBuilder()
@@ -20,7 +19,6 @@ class AndroidSpellsLoader: SpellsLoader {
                 results.toString()
             }
         }
-        Log.d("SPELLS", "Loaded " + output.length + " chars")
         return output
     }
 }
