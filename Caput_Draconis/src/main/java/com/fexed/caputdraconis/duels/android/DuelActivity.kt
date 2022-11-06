@@ -1,5 +1,6 @@
 package com.fexed.caputdraconis.duels.android
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,12 +17,24 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.fexed.caputdraconis.Spell
+import com.fexed.caputdraconis.SpellListUtility
 import com.fexed.caputdraconis.android.Banner
 import com.fexed.caputdraconis.android.CaputDraconisTheme
 import com.fexed.caputdraconis.android.R
 import com.fexed.caputdraconis.duels.DuelUtility
 
 class DuelActivity : ComponentActivity() {
+    companion object {
+        fun checkSpell(currentSpell: Spell, defensiveSpell: String): Boolean {
+            return (currentSpell.difinc.lowercase().contains(defensiveSpell.lowercase()))
+        }
+
+        fun newSpell(spellList: List<Spell>, activity: ComponentActivity): Spell {
+            DuelUtility.incrTotalSpellsNumber(activity)
+            return SpellListUtility.GetRandomSpell(spellList)
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
