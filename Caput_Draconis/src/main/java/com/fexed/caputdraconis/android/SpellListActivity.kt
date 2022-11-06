@@ -27,6 +27,7 @@ import androidx.compose.ui.window.Dialog
 import com.fexed.caputdraconis.AndroidSpellsLoader.Companion.CSVFile
 import com.fexed.caputdraconis.Spell
 import com.fexed.caputdraconis.SpellListUtility
+import com.fexed.caputdraconis.duel.android.DuelActivity
 
 import com.fexed.caputdraconis.getSpellsLoader
 import com.google.android.gms.ads.AdRequest

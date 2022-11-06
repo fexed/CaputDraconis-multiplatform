@@ -1,4 +1,4 @@
-package com.fexed.caputdraconis.android
+package com.fexed.caputdraconis.duel.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,6 +16,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.fexed.caputdraconis.android.Banner
+import com.fexed.caputdraconis.android.CaputDraconisTheme
+import com.fexed.caputdraconis.android.R
 import com.fexed.caputdraconis.duels.DuelUtility
 
 class DuelActivity : ComponentActivity() {
