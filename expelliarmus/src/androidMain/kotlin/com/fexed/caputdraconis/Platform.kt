@@ -6,7 +6,7 @@ import android.content.SharedPreferences
 
 class AndroidPlatform : Platform {
     override val name: String = "Android"
-    override val appVersion: String = "v0.1"
+    override val appVersion: String = "v0.2"
 }
 
 actual fun getPlatform(): Platform = AndroidPlatform()
