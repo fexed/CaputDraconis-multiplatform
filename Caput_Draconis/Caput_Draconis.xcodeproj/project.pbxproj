@@ -14,6 +14,7 @@
 		7555FF83242A565900829871 /* SpellListWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* SpellListWindow.swift */; };
 		EB2B9C5B290B0F530002C1B6 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2B9C5A290B0F530002C1B6 /* BannerAd.swift */; };
 		EB48CE182917B81C0007CC49 /* DuelWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48CE172917B81C0007CC49 /* DuelWindow.swift */; };
+		EB48CE2329182BB70007CC49 /* SurvivalModeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48CE2229182BB70007CC49 /* SurvivalModeWindow.swift */; };
 		EB5712C22909C68000C4AFC2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C12909C68000C4AFC2 /* Color.swift */; };
 		EB5712C52909C6FF00C4AFC2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C42909C6FF00C4AFC2 /* Constants.swift */; };
 		EB5712C72909C73600C4AFC2 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C62909C73600C4AFC2 /* UserDefaultsUtils.swift */; };
@@ -68,6 +69,7 @@
 		DCA26EAAAD1465AA4210360F /* Pods-Caput_Draconis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caput_Draconis.debug.xcconfig"; path = "Target Support Files/Pods-Caput_Draconis/Pods-Caput_Draconis.debug.xcconfig"; sourceTree = "<group>"; };
 		EB2B9C5A290B0F530002C1B6 /* BannerAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		EB48CE172917B81C0007CC49 /* DuelWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuelWindow.swift; sourceTree = "<group>"; };
+		EB48CE2229182BB70007CC49 /* SurvivalModeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvivalModeWindow.swift; sourceTree = "<group>"; };
 		EB5712C12909C68000C4AFC2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EB5712C42909C6FF00C4AFC2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB5712C62909C73600C4AFC2 /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		7555FF7D242A565900829871 /* Caput_Draconis */ = {
 			isa = PBXGroup;
 			children = (
+				EB48CE2129182B640007CC49 /* Duels */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* SpellListWindow.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -142,7 +145,6 @@
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 				EBA403D229086EE300A36880 /* CreditsWindow.swift */,
 				EB2B9C5A290B0F530002C1B6 /* BannerAd.swift */,
-				EB48CE172917B81C0007CC49 /* DuelWindow.swift */,
 			);
 			path = Caput_Draconis;
 			sourceTree = "<group>";
@@ -154,6 +156,15 @@
 				2432659A8B1BA3378B7B225D /* Pods-Caput_Draconis.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB48CE2129182B640007CC49 /* Duels */ = {
+			isa = PBXGroup;
+			children = (
+				EB48CE172917B81C0007CC49 /* DuelWindow.swift */,
+				EB48CE2229182BB70007CC49 /* SurvivalModeWindow.swift */,
+			);
+			path = Duels;
 			sourceTree = "<group>";
 		};
 		EB5712BE2909C66C00C4AFC2 /* Extensions */ = {
@@ -355,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB48CE2329182BB70007CC49 /* SurvivalModeWindow.swift in Sources */,
 				EB5712C52909C6FF00C4AFC2 /* Constants.swift in Sources */,
 				EB2B9C5B290B0F530002C1B6 /* BannerAd.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
