@@ -23,7 +23,7 @@
             android:exported="false">
         </activity>
         <activity
-            android:name="com.fexed.caputdraconis.duel.android.DuelActivity"
+            android:name="com.fexed.caputdraconis.duels.android.DuelActivity"
             android:exported="false">
         </activity>
     </application>

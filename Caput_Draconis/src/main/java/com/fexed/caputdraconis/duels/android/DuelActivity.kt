@@ -1,4 +1,4 @@
-package com.fexed.caputdraconis.duel.android
+package com.fexed.caputdraconis.duels.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
