@@ -22,5 +22,9 @@
             android:name=".InfoActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".DuelActivity"
+            android:exported="false">
+        </activity>
     </application>
 </manifest> 

@@ -83,7 +83,7 @@ class SpellListActivity : ComponentActivity() {
 }
 
 @Composable
-fun StandardScaffold(context: Context, scaffoldState: ScaffoldState, actions: (@Composable RowScope.() -> Unit), content: (@Composable () -> Unit)) {
+fun StandardScaffold(context: ComponentActivity, scaffoldState: ScaffoldState, actions: (@Composable RowScope.() -> Unit), content: (@Composable () -> Unit)) {
     Scaffold(scaffoldState = scaffoldState,
         topBar = {
             TopAppBar(
@@ -105,7 +105,7 @@ fun StandardScaffold(context: Context, scaffoldState: ScaffoldState, actions: (@
             ExtendedFloatingActionButton( text = {
                     Text(context.getString(R.string.minigame))
                 },
-                onClick = { /*TODO*/ }, backgroundColor = MaterialTheme.colors.primaryVariant)
+                onClick = { context.startActivity(Intent(context, DuelActivity::class.java))}, backgroundColor = MaterialTheme.colors.primaryVariant)
         }
     ){
         Surface(
