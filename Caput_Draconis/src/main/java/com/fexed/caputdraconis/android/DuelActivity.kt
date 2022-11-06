@@ -39,6 +39,13 @@ class DuelActivity : ComponentActivity() {
         StandardScaffold(context = context, scaffoldState = rememberScaffoldState(), actions = {}) {
             Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
                 Stats(context)
+                Text(text = context.getString(R.string.selectmode),
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    fontSize = 24.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp))
                 ModeCard(
                     title = context.getString(R.string.survmode),
                     desc = context.getString(R.string.survmodedesc),
@@ -98,7 +105,10 @@ class DuelActivity : ComponentActivity() {
             .fillMaxWidth()
             .wrapContentHeight()) {
             Column {
-                Row(modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+                Row(modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight()
+                    .padding(8.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                     Text(text = context.getString(R.string.incnumb))
                     Text(text = DuelUtility.getTotalSpellsNumber(context).toString(), modifier = Modifier.padding(0.dp, 0.dp, 24.dp, 0.dp))
                 }
