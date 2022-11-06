@@ -43,7 +43,7 @@ struct ModeCard: View {
     var body: some View {
         VStack {
             Text(title).font(.headline)
-            Text(desc).font(.body).multilineTextAlignment(.center)
+            Text(desc).font(.body).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
             Button {
                 
             } label: {
