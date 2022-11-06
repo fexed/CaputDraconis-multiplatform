@@ -5,11 +5,8 @@ import platform.Foundation.*
 class iOSSpellsLoader: SpellsLoader {
     override fun GetCSVFromAssets(): String {
         var output = ""
-        println("SPELLS\tLoading CSV")
         val language = NSLocale.preferredLanguages.first() as String
-        println("SPELLS\t$language")
-        val path: String?
-        path = if (language.split("-")[0] == "it")
+        val path: String? = if (language.split("-")[0] == "it")
             NSBundle.mainBundle().pathForResource("Incantesimi", ofType = "csv")
         else
             NSBundle.mainBundle().pathForResource("IncantesimiEN", ofType = "csv")
@@ -20,7 +17,6 @@ class iOSSpellsLoader: SpellsLoader {
             output = contents!!.string().toString()
         }
 
-        println("SPELLS\tLoaded ${output.length} chars")
         return output
     }
 

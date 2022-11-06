@@ -19,12 +19,5 @@ struct iOSApp: App {
 			SpellListWindow()
 		}
         
-        WindowGroup("Credits") {
-            CreditsWindow()
-        }.handlesExternalEvents(matching: Set(arrayLiteral: "Credits"))
-        
-        WindowGroup("Duel") {
-            DuelWindow()
-        }.handlesExternalEvents(matching: Set(arrayLiteral: "Duel"))
 	}
 }
