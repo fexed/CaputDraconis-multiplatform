@@ -61,7 +61,11 @@ class SpellListUtility {
         fun GetRandomSpell(spellList: List<Spell>): Spell {
             var spell = spellList.random()
 
-            while(spell.nome.lowercase().contains("scutum") || spell.nome.lowercase().contains("finite") ||spell.nome.lowercase().contains("protego"))
+            while(
+                (!spell.difinc.lowercase().contains("scutum") &&
+                !spell.difinc.lowercase().contains("finite") &&
+                !spell.difinc.lowercase().contains("protego"))
+            )
                 spell = spellList.random()
 
             return spell
