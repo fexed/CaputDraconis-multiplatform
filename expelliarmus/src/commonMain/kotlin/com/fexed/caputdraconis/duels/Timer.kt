@@ -1,5 +1,6 @@
 package com.fexed.caputdraconis.duels
 
+import com.fexed.caputdraconis.duels.DuelUtility.Companion.INTERVAL_MILLISECONDS
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
@@ -22,19 +23,34 @@ class Timer {
             }
     }
 
-    private val timer: Job = startCoroutineTimer(delayMillis = 0, repeatMillis = 20000) {
+    private val DuelTimer: Job = startCoroutineTimer(delayMillis = DuelUtility.TIMER_MILLISECONDS.toLong(), repeatMillis = 0) {
         //doSomethingBackground()
         scope.launch(defaultDispatcher) {
             //doSomethingMainThread()
         }
     }
 
-    fun startTimer() {
-        timer.start()
+    fun startDuelTimer() {
+        DuelTimer.start()
     }
 
-    fun cancelTimer() {
-        timer.cancel()
+    fun cancelDuelTimer() {
+        DuelTimer.cancel()
+    }
+
+    private val SpellTimer: Job = startCoroutineTimer(delayMillis = DuelUtility.INTERVAL_MILLISECONDS.toLong(), repeatMillis = INTERVAL_MILLISECONDS.toLong()) {
+        //doSomethingBackground()
+        scope.launch(defaultDispatcher) {
+            //doSomethingMainThread()
+        }
+    }
+
+    fun startSpellTimer() {
+        SpellTimer.start()
+    }
+
+    fun cancelSpellTimer() {
+        SpellTimer.cancel()
     }
 }
 
