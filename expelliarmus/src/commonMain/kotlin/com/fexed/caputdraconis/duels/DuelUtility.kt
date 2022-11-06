@@ -14,5 +14,9 @@ class DuelUtility {
         fun incrTotalSpellsNumber(prefs: Preferences) {
             prefs.setInt(KEY_TOTAL_SPELLS, prefs.getInt(KEY_TOTAL_SPELLS, 0)!! + 1)
         }
+
+        fun getTotalSpellsNumber(prefs: Preferences): Int {
+            return prefs.getInt(KEY_TOTAL_SPELLS, 0)!!
+        }
     }
 }
