@@ -65,7 +65,7 @@ class DuelActivity : ComponentActivity() {
                     title = context.getString(R.string.survmode),
                     desc = context.getString(R.string.survmodedesc),
                     buttontxt = context.getString(R.string.play),
-                    button = { /* TODO */ }
+                    button = { context.startActivity(Intent(context, SurvivalModeActivity::class.java)) }
                 )
                 ModeCard(
                     title = context.getString(R.string.arcademode),
