@@ -42,7 +42,7 @@ struct ModeCard: View {
             } label: {
                 Text(buttontxt)
             }.padding()
-        }.padding().background(Color.ColorSecondary)
+        }.padding()
 
     }
 }
