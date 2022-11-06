@@ -36,6 +36,9 @@
     <string name="selectmode">Modalità</string>
     <string name="arcademode">Modalità Arcade</string>
     <string name="timermode">Modalità Timer</string>
+    <string name="survmodedesc">Fino al primo errore! Fai quanti più punti consecutivi.</string>
+    <string name="arcademodedesc">Massimo 3 errori! Senza limite di tempo.</string>
+    <string name="timermodedesc">Un minuto! Fai quanti più punti possibile.</string>
     <string name="tienipremutotxt">Tieni premuto per sapere in cosa consiste ciascuna modalità!</string>
     <string name="hiscoretitle">Punteggi</string>
     <string name="incnumb">Numero di incantesimi</string>
