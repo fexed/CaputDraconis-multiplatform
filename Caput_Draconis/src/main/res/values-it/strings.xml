@@ -33,7 +33,7 @@
     <string name="disclaimer">Caput Draconis non è affiliata o sponsorizzata da J. K. Rowling, Warner Bros. o Time Warner. Harry Potter e i relativi diritti di pubblicazione © J. K. Rowling. I personaggi di Harry Potter, i nomi e i relativi termini sono marchio commerciale e © Warner Bros. Ent. Tutti i diritti riservati.</string>
 
     <string name="survmode">Modalità Survival</string>
-    <string name="selectmode">Modalità</string>
+    <string name="selectmode">Seleziona la modalità</string>
     <string name="arcademode">Modalità Arcade</string>
     <string name="timermode">Modalità Timer</string>
     <string name="survmodedesc">Fino al primo errore! Fai quanti più punti consecutivi.</string>
