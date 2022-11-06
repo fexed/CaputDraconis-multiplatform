@@ -18,6 +18,7 @@ struct DuelWindow: View {
 struct MainMenu: View {
     var body: some View {
         VStack {
+            Text(NSLocalizedString("selectmode", comment: "")).font(.headline)
             ModeCard(title: NSLocalizedString("survmode", comment: ""), desc: NSLocalizedString("survmodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: ""))
             ModeCard(title: NSLocalizedString("arcademode", comment: ""), desc: NSLocalizedString("arcademodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: ""))
             ModeCard(title: NSLocalizedString("timermode", comment: ""), desc: NSLocalizedString("timermodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: ""))
@@ -41,7 +42,7 @@ struct ModeCard: View {
             } label: {
                 Text(buttontxt)
             }.padding()
-        }.padding()
+        }.padding().background(Color.ColorSecondary)
 
     }
 }
