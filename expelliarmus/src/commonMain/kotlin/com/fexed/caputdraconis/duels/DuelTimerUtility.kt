@@ -8,18 +8,22 @@ import kotlin.coroutines.CoroutineContext
 class DuelTimerUtility {
     private val job = SupervisorJob()
     private val scope = CoroutineScope(Dispatchers.Default + job)
+    var elapsedSeconds = 0
 
-    fun startCoroutineTimer(delayMillis: Long = 0, repeatMillis: Long = 0, action: () -> Unit) = scope.launch(
-        defaultDispatcher) {
-            delay(delayMillis)
-            if (repeatMillis > 0) {
-                while (true) {
-                    action()
-                    delay(repeatMillis)
-                }
-            } else {
+    fun startCoroutineTimer(delayMillis: Long = 0, repeatMillis: Long = 0, action: () -> Unit) = scope.launch(defaultDispatcher) {
+        for (i in 0..(delayMillis/1000)) {
+            delay(1000)
+            elapsedSeconds++
+        }
+
+        if (repeatMillis > 0) {
+            while (true) {
                 action()
+                delay(repeatMillis)
             }
+        } else {
+            action()
+        }
     }
 
     fun createDuelTimer(action: () -> Unit): Job {
