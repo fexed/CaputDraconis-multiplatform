@@ -6,8 +6,8 @@ class DuelTest {
 
     @Test
     fun testTimer() {
-        val timer = Timer()
+        val timer = DuelTimerUtility()
 
-        timer.startDuelTimer()
+        timer.createSpellTimer {  }.start()
     }
 }
