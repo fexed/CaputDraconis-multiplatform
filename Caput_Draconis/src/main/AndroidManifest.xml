@@ -30,5 +30,9 @@
             android:name="com.fexed.caputdraconis.duels.android.SurvivalModeActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name="com.fexed.caputdraconis.duels.android.TimerModeActivity"
+            android:exported="false">
+        </activity>
     </application>
 </manifest> 

@@ -89,7 +89,7 @@ class DuelActivity : ComponentActivity() {
                     title = context.getString(R.string.timermode),
                     desc = context.getString(R.string.timermodedesc),
                     buttontxt = context.getString(R.string.play),
-                    button = { /* TODO */ }
+                    button = { context.startActivity(Intent(context, TimerModeActivity::class.java)) }
                 )
             }
         }
