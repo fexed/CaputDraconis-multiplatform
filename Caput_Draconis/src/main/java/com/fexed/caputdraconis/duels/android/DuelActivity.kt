@@ -57,6 +57,14 @@ class DuelActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+                            IconButton(onClick = { activity.onBackPressed() }) {
+                                Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = null)
+                            }
+                            Text(text = stringResource(id = R.string.back),
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier.clickable { activity.onBackPressed() } )
+                        }
                         Box(modifier = Modifier.fillMaxWidth().fillMaxHeight().weight(1f), contentAlignment = Alignment.Center) {
                             Text(text = currentSpell.value.nome /*+ ">" + currentSpell.difinc */,
                                 fontWeight = FontWeight.Bold,
