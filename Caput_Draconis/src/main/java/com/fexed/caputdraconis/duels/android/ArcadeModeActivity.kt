@@ -83,7 +83,7 @@ class ArcadeModeActivity : ComponentActivity() {
                         else currentSpell.value = newSpell(spellList, activity)
                     }
                 },
-                bottom = { Text(text = stringResource(id = R.string.currerrors) + errors) }
+                bottom = { Text(text = stringResource(id = R.string.currerrors) + " " + errors) }
             )
         }
     }

@@ -81,7 +81,7 @@ class DuelActivity : ComponentActivity() {
                                 Text(text = "Scutum", fontSize = 20.sp)
                             }
                         }
-                        Text(text = stringResource(id = R.string.currpoints) + currentPoints.value, modifier = Modifier.padding(8.dp))
+                        Text(text = stringResource(id = R.string.currpoints) + " " + currentPoints.value, modifier = Modifier.padding(8.dp))
                         bottom.invoke()
                     }
                 }
