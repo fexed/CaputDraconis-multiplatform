@@ -31,6 +31,10 @@
             android:exported="false">
         </activity>
         <activity
+            android:name="com.fexed.caputdraconis.duels.android.ArcadeModeActivity"
+            android:exported="false">
+        </activity>
+        <activity
             android:name="com.fexed.caputdraconis.duels.android.TimerModeActivity"
             android:exported="false">
         </activity>

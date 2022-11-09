@@ -83,7 +83,7 @@ class DuelActivity : ComponentActivity() {
                     title = context.getString(R.string.arcademode),
                     desc = context.getString(R.string.arcademodedesc),
                     buttontxt = context.getString(R.string.play),
-                    button = { /* TODO */ }
+                    button = { context.startActivity(Intent(context, ArcadeModeActivity::class.java)) }
                 )
                 ModeCard(
                     title = context.getString(R.string.timermode),
