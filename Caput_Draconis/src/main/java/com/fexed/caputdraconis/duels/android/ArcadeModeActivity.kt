@@ -38,73 +38,52 @@ class ArcadeModeActivity : ComponentActivity() {
         val activity = this
 
         setContent {
-            var currentSpell by remember {
+            var currentSpell = remember {
                 mutableStateOf(newSpell(spellList, activity))
             }
-            var currentPoints by remember {
+            var currentPoints = remember {
                 mutableStateOf(0)
             }
             var errors by remember {
                 mutableStateOf(0)
             }
 
-            CaputDraconisTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceEvenly, horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(text = currentSpell.nome /*+ ">" + currentSpell.difinc */,
-                            fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center,
-                            fontSize = 42.sp,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(8.dp)
-                        )
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-                            Button(onClick = {
-                                if (checkSpell(currentSpell, "Finite")) {
-                                    currentSpell = newSpell(spellList, activity)
-                                    currentPoints++
-                                } else {
-                                    errors++
-                                    if (errors == 3) finish()
-                                    else currentSpell = newSpell(spellList, activity)
-                                }
-                            }) {
-                                Text(text = "Finite", fontSize = 20.sp)
-                            }
-                            Button(onClick = {
-                                if (checkSpell(currentSpell, "Protego")) {
-                                    currentSpell = newSpell(spellList, activity)
-                                    currentPoints++
-                                } else {
-                                    errors++
-                                    if (errors == 3) finish()
-                                    else currentSpell = newSpell(spellList, activity)
-                                }
-                            }) {
-                                Text(text = "Protego", fontSize = 20.sp)
-                            }
-                            Button(onClick = {
-                                if (checkSpell(currentSpell, "Scutum")) {
-                                    currentSpell = newSpell(spellList, activity)
-                                    currentPoints++
-                                } else {
-                                    errors++
-                                    if (errors == 3) finish()
-                                    else currentSpell = newSpell(spellList, activity)
-                                }
-                            }) {
-                                Text(text = "Scutum", fontSize = 20.sp)
-                            }
-                        }
-                        Text(text = getString(R.string.incnumb) + ": $currentPoints")
-                        Text(text = "Errors: ${errors}")
+            DuelActivity.GameScene(
+                activity = this,
+                currentSpell = currentSpell,
+                currentPoints = currentPoints,
+                finiteAction = {
+                    if (checkSpell(currentSpell.value, "Finite")) {
+                        currentSpell.value = newSpell(spellList, activity)
+                        currentPoints.value++
+                    } else {
+                        errors++
+                        if (errors == 3) finish()
+                        else currentSpell.value = newSpell(spellList, activity)
                     }
-                }
-            }
+                },
+                protegoAction = {
+                    if (checkSpell(currentSpell.value, "Protego")) {
+                        currentSpell.value = newSpell(spellList, activity)
+                        currentPoints.value++
+                    } else {
+                        errors++
+                        if (errors == 3) finish()
+                        else currentSpell.value = newSpell(spellList, activity)
+                    }
+                },
+                scutumAction = {
+                    if (checkSpell(currentSpell.value, "Scutum")) {
+                        currentSpell.value = newSpell(spellList, activity)
+                        currentPoints.value++
+                    } else {
+                        errors++
+                        if (errors == 3) finish()
+                        else currentSpell.value = newSpell(spellList, activity)
+                    }
+                },
+                bottom = { Text(text = "Current errors: $errors") }
+            )
         }
     }
 }

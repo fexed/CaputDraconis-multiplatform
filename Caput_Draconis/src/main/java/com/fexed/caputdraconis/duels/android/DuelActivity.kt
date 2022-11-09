@@ -13,6 +13,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -36,6 +37,48 @@ class DuelActivity : ComponentActivity() {
         fun newSpell(spellList: List<Spell>, activity: ComponentActivity): Spell {
             DuelUtility.incrTotalSpellsNumber(activity)
             return SpellListUtility.GetRandomSpell(spellList)
+        }
+
+
+        @Composable
+        fun GameScene(activity: ComponentActivity,
+                      currentSpell: MutableState<Spell>,
+                      currentPoints: MutableState<Int>,
+                      finiteAction: () -> Unit,
+                      protegoAction: () -> Unit,
+                      scutumAction: () -> Unit,
+                      bottom: @Composable () -> Unit
+        ) {
+            CaputDraconisTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceEvenly, horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(text = currentSpell.value.nome /*+ ">" + currentSpell.difinc */,
+                            fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center,
+                            fontSize = 42.sp,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(8.dp)
+                        )
+                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+                            Button(onClick = finiteAction) {
+                                Text(text = "Finite", fontSize = 20.sp)
+                            }
+                            Button(onClick = protegoAction) {
+                                Text(text = "Protego", fontSize = 20.sp)
+                            }
+                            Button(onClick = scutumAction) {
+                                Text(text = "Scutum", fontSize = 20.sp)
+                            }
+                        }
+                        Text(text = activity.getString(R.string.incnumb) + ": ${currentPoints.value}")
+                        bottom.invoke()
+                    }
+                }
+            }
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {

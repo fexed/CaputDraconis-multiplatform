@@ -38,56 +38,37 @@ class SurvivalModeActivity : ComponentActivity() {
         val activity = this
 
         setContent {
-            var currentSpell by remember {
+            var currentSpell = remember {
                 mutableStateOf(newSpell(spellList, activity))
             }
-            var currentPoints by remember {
+            var currentPoints = remember {
                 mutableStateOf(0)
             }
-            CaputDraconisTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceEvenly, horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(text = currentSpell.nome /*+ ">" + currentSpell.difinc */,
-                            fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center,
-                            fontSize = 42.sp,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(8.dp)
-                        )
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-                            Button(onClick = {
-                                if (checkSpell(currentSpell, "Finite")) {
-                                    currentSpell = newSpell(spellList, activity)
-                                    currentPoints++
-                                } else finish()
-                            }) {
-                                Text(text = "Finite", fontSize = 20.sp)
-                            }
-                            Button(onClick = {
-                                if (checkSpell(currentSpell, "Protego")) {
-                                    currentSpell = newSpell(spellList, activity)
-                                    currentPoints++
-                                } else finish()
-                            }) {
-                                Text(text = "Protego", fontSize = 20.sp)
-                            }
-                            Button(onClick = {
-                                if (checkSpell(currentSpell, "Scutum")) {
-                                    currentSpell = newSpell(spellList, activity)
-                                    currentPoints++
-                                } else finish()
-                            }) {
-                                Text(text = "Scutum", fontSize = 20.sp)
-                            }
-                        }
-                        Text(text = getString(R.string.incnumb) + ": $currentPoints")
-                    }
-                }
-            }
+
+            DuelActivity.GameScene(
+                activity = this,
+                currentSpell = currentSpell,
+                currentPoints = currentPoints,
+                finiteAction = {
+                    if (checkSpell(currentSpell.value, "Finite")) {
+                        currentSpell.value = newSpell(spellList, activity)
+                        currentPoints.value++
+                    } else activity.finish()
+                },
+                protegoAction = {
+                    if (checkSpell(currentSpell.value, "Protego")) {
+                        currentSpell.value = newSpell(spellList, activity)
+                        currentPoints.value++
+                    } else activity.finish()
+                },
+                scutumAction = {
+                    if (checkSpell(currentSpell.value, "Scutum")) {
+                        currentSpell.value = newSpell(spellList, activity)
+                        currentPoints.value++
+                    } else activity.finish()
+                },
+                bottom = { Text(text = "Survival mode!") }
+            )
         }
     }
 }
