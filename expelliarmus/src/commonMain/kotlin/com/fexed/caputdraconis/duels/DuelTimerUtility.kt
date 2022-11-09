@@ -19,7 +19,10 @@ class DuelTimerUtility {
         if (repeatMillis > 0) {
             while (true) {
                 action()
-                delay(repeatMillis)
+                for (i in 0..(repeatMillis/1000)) {
+                    delay(1000)
+                    elapsedSeconds++
+                }
             }
         } else {
             action()
