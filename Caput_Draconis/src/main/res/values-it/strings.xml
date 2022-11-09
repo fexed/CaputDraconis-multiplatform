@@ -42,5 +42,7 @@
     <string name="tienipremutotxt">Tieni premuto per sapere in cosa consiste ciascuna modalità!</string>
     <string name="hiscoretitle">Punteggi</string>
     <string name="incnumb">Numero di incantesimi</string>
+    <string name="currpoints">Punti attuali:</string>
+    <string name="currerrors">Errori attuali:</string>
     <string name="descrgiocotext">Il minigioco di allenamento ha tre modalità:</string>
 </resources>

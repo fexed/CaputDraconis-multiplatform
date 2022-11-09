@@ -42,5 +42,7 @@
     <string name="tienipremutotxt">Tap and hold on the mode name to know what that mode is about!</string>
     <string name="hiscoretitle">High Scores</string>
     <string name="incnumb">Number of spells</string>
+    <string name="currpoints">Current points:</string>
+    <string name="currerrors">Current errors:</string>
     <string name="descrgiocotext">The training minigame has three play modes:</string>
 </resources>

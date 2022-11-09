@@ -15,8 +15,10 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fexed.caputdraconis.Spell
@@ -54,16 +56,21 @@ class DuelActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceEvenly, horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(text = currentSpell.value.nome /*+ ">" + currentSpell.difinc */,
-                            fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center,
-                            fontSize = 42.sp,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(8.dp)
-                        )
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+                    Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Box(modifier = Modifier.fillMaxWidth().fillMaxHeight().weight(1f), contentAlignment = Alignment.Center) {
+                            Text(text = currentSpell.value.nome /*+ ">" + currentSpell.difinc */,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center,
+                                fontSize = 42.sp,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(8.dp)
+                            )
+                        }
+                        Row(modifier = Modifier
+                            .fillMaxWidth()
+                            .wrapContentHeight()
+                            .padding(8.dp), horizontalArrangement = Arrangement.SpaceEvenly) {
                             Button(onClick = finiteAction) {
                                 Text(text = "Finite", fontSize = 20.sp)
                             }
@@ -74,7 +81,7 @@ class DuelActivity : ComponentActivity() {
                                 Text(text = "Scutum", fontSize = 20.sp)
                             }
                         }
-                        Text(text = activity.getString(R.string.incnumb) + ": ${currentPoints.value}")
+                        Text(text = stringResource(id = R.string.currpoints) + currentPoints.value, modifier = Modifier.padding(8.dp))
                         bottom.invoke()
                     }
                 }
@@ -212,5 +219,19 @@ class DuelActivity : ComponentActivity() {
                 content = content
             )
         }
+    }
+
+
+    @Preview
+    @Composable
+    fun PreviewGameMode() {
+        GameScene(
+            activity = ComponentActivity(),
+            currentSpell = remember { mutableStateOf(Spell("Incantesimo", "", "", "", "")) },
+            currentPoints = remember { mutableStateOf(0) },
+            finiteAction = { /*TODO*/ },
+            protegoAction = { /*TODO*/ },
+            scutumAction = { /*TODO*/ },
+            bottom = { Text("Preview")})
     }
 }
