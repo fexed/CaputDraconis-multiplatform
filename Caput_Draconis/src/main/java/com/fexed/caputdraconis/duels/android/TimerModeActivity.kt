@@ -26,9 +26,13 @@ import com.fexed.caputdraconis.getSpellsLoader
 import com.fexed.caputdraconis.android.R
 import com.fexed.caputdraconis.duels.DuelTimerUtility
 import com.fexed.caputdraconis.duels.DuelUtility
+import kotlinx.coroutines.Job
 import java.util.*
 
 class TimerModeActivity : ComponentActivity() {
+    lateinit var duelTimer: Job
+    lateinit var spellTimer: Job
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AndroidSpellsLoader.CSVFile = if (Locale.getDefault().language == "it")
@@ -47,15 +51,15 @@ class TimerModeActivity : ComponentActivity() {
                 mutableStateOf(0)
             }
 
-            val duelTimer = DuelTimerUtility()
-            duelTimer.createDuelTimer {
+            duelTimer = DuelTimerUtility().createDuelTimer {
                 activity.finish()
-            }.start()
+            }
+            duelTimer.start()
 
-            val spellTimer = DuelTimerUtility()
-            spellTimer.createSpellTimer {
+            spellTimer = DuelTimerUtility().createSpellTimer {
                 currentSpell = newSpell(spellList, activity)
-            }.start()
+            }
+            spellTimer.start()
 
             CaputDraconisTheme {
                 Surface(
@@ -98,10 +102,17 @@ class TimerModeActivity : ComponentActivity() {
                             }
                         }
                         Text(text = getString(R.string.incnumb) + ": $currentPoints")
-                        Text(text = "Elapsed: ${duelTimer.elapsedSeconds}s")
+                        //Text(text = "Elapsed: ${duelTimer.elapsedSeconds}s")
                     }
                 }
             }
         }
+    }
+
+    override fun onPause() {
+        spellTimer.cancel()
+        duelTimer.cancel()
+        finish()
+        super.onPause()
     }
 }
