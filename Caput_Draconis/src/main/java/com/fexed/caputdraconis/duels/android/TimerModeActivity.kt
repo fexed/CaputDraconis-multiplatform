@@ -67,16 +67,31 @@ class TimerModeActivity : ComponentActivity() {
                 currentSpell = currentSpell,
                 currentPoints = currentPoints,
                 finiteAction = {
+                    spellTimer.cancel()
+                    spellTimer = DuelTimerUtility().createSpellTimer {
+                        currentSpell.value = newSpell(spellList, activity)
+                    }
+                    spellTimer.start()
                     if (checkSpell(currentSpell.value, "Finite")) currentPoints.value++
                     else currentPoints.value--
                     currentSpell.value = newSpell(spellList, activity)
                 },
                 protegoAction = {
+                    spellTimer.cancel()
+                    spellTimer = DuelTimerUtility().createSpellTimer {
+                        currentSpell.value = newSpell(spellList, activity)
+                    }
+                    spellTimer.start()
                     if (checkSpell(currentSpell.value, "Protego")) currentPoints.value++
                     else currentPoints.value--
                     currentSpell.value = newSpell(spellList, activity)
                 },
                 scutumAction = {
+                    spellTimer.cancel()
+                    spellTimer = DuelTimerUtility().createSpellTimer {
+                        currentSpell.value = newSpell(spellList, activity)
+                    }
+                    spellTimer.start()
                     if (checkSpell(currentSpell.value, "Scutum")) currentPoints.value++
                     else currentPoints.value--
                     currentSpell.value = newSpell(spellList, activity)
