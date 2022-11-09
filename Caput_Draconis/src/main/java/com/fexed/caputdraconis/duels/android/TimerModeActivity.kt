@@ -81,7 +81,7 @@ class TimerModeActivity : ComponentActivity() {
                     else currentPoints.value--
                     currentSpell.value = newSpell(spellList, activity)
                 },
-                bottom = { Text(text = stringResource(id = R.string.timermode)) }
+                bottom = { Text(text = stringResource(id = R.string.timermode), modifier = Modifier.padding(8.dp)) }
             )
         }
     }

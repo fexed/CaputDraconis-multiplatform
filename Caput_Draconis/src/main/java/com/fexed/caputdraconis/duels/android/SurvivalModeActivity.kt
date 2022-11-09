@@ -68,7 +68,7 @@ class SurvivalModeActivity : ComponentActivity() {
                         currentPoints.value++
                     } else activity.finish()
                 },
-                bottom = { Text(text = stringResource(id = R.string.timermode)) }
+                bottom = { Text(text = stringResource(id = R.string.timermode), modifier = Modifier.padding(8.dp)) }
             )
         }
     }
