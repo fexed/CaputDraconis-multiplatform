@@ -18,6 +18,7 @@
 		EB5712C22909C68000C4AFC2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C12909C68000C4AFC2 /* Color.swift */; };
 		EB5712C52909C6FF00C4AFC2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C42909C6FF00C4AFC2 /* Constants.swift */; };
 		EB5712C72909C73600C4AFC2 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5712C62909C73600C4AFC2 /* UserDefaultsUtils.swift */; };
+		EB591B97293A8F2200744B7F /* ArcadeModeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB591B96293A8F2200744B7F /* ArcadeModeWindow.swift */; };
 		EBA403D329086EE300A36880 /* CreditsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA403D229086EE300A36880 /* CreditsWindow.swift */; };
 		EBD1C1972904105100663EE4 /* Pods-Caput_Draconis in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD1C19329040E2F00663EE4 /* Pods-Caput_Draconis */; };
 		EBD1C1A82905B66600663EE4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBD1C1AA2905B66600663EE4 /* Localizable.strings */; };
@@ -73,6 +74,7 @@
 		EB5712C12909C68000C4AFC2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EB5712C42909C6FF00C4AFC2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB5712C62909C73600C4AFC2 /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
+		EB591B96293A8F2200744B7F /* ArcadeModeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeModeWindow.swift; sourceTree = "<group>"; };
 		EBA403D229086EE300A36880 /* CreditsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsWindow.swift; sourceTree = "<group>"; };
 		EBD1C18D29040E2F00663EE4 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		EBD1C1A92905B66600663EE4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				EB48CE172917B81C0007CC49 /* DuelWindow.swift */,
 				EB48CE2229182BB70007CC49 /* SurvivalModeWindow.swift */,
+				EB591B96293A8F2200744B7F /* ArcadeModeWindow.swift */,
 			);
 			path = Duels;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				EB5712C52909C6FF00C4AFC2 /* Constants.swift in Sources */,
 				EB2B9C5B290B0F530002C1B6 /* BannerAd.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				EB591B97293A8F2200744B7F /* ArcadeModeWindow.swift in Sources */,
 				EB5712C72909C73600C4AFC2 /* UserDefaultsUtils.swift in Sources */,
 				EB5712C22909C68000C4AFC2 /* Color.swift in Sources */,
 				EB48CE182917B81C0007CC49 /* DuelWindow.swift in Sources */,

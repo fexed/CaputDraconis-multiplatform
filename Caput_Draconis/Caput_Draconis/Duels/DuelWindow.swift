@@ -23,7 +23,7 @@ struct MainMenu: View {
     
     var body: some View {
         NavigationLink(destination: SurvivalModeWindow(), isActive: $survivalModeSelected) {}
-        //NavigationLink(destination: ArcadeModeWindow(), isActive: $arcadeModeSelected) {}
+        NavigationLink(destination: ArcadeModeWindow(), isActive: $arcadeModeSelected) {}
         //NavigationLink(destination: TimerModeWindow(), isActive: $timerlModeSelected) {}
         
         
