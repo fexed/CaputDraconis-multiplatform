@@ -42,7 +42,16 @@ struct SurvivalModeWindow: View {
                     currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
                 } else {
                     self.mode.wrappedValue.dismiss()
-                }}
+                }},
+            Bottom: {
+                VStack {
+                    HStack {
+                        Text("currentpoints").padding()
+                        Text(String(currentPoints)).padding()
+                    }
+                    Text("survmode").padding()
+                }
+            }
         )
     }
 }

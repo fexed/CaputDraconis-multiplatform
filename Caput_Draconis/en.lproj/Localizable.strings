@@ -48,3 +48,5 @@
 "hiscoretitle" = "High Scores";
 "incnumb" = "Number of spells";
 "descrgiocotext" = "The training minigame has three play modes:";
+"currentpoints" = "Current points:";
+"currenterrors" = "Current errors:";

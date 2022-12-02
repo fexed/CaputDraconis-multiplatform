@@ -68,11 +68,12 @@ struct ModeCard: View {
     }
 }
 
-struct DuelLayout: View {
+struct DuelLayout<Content: View>: View {
     var spell: Spell
     var FiniteAction: (() -> Void)
     var ProtegoAction: (() -> Void)
     var ScutumAction: (() -> Void)
+    @ViewBuilder var Bottom: Content
     
     var body: some View {
         VStack {
@@ -84,6 +85,7 @@ struct DuelLayout: View {
                 Button(action: ProtegoAction, label: { Text("Protego") }).padding()
                 Button(action: ScutumAction, label: { Text("Scutum") }).padding()
             }.padding()
+            Bottom
         }
     }
 }

@@ -61,7 +61,19 @@ struct ArcadeModeWindow: View {
                         DuelUtility.companion.incrTotalSpellsNumber(prefs: NSObject())
                         currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
                     }
-                }}
+                }},
+            Bottom: {
+                VStack {
+                    HStack {
+                        Text("currentpoints").padding()
+                        Text(String(currentPoints)).padding()
+                    }
+                    HStack {
+                        Text("currenterrors").padding()
+                        Text(String(currentErrors)).padding()
+                    }
+                }
+            }
         )
     }
 }

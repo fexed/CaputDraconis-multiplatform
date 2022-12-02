@@ -48,3 +48,5 @@
 "hiscoretitle" = "Punteggi";
 "incnumb" = "Numero di incantesimi";
 "descrgiocotext" = "Il minigioco di allenamento ha tre modalità:";
+"currentpoints" = "Punti attuali:";
+"currenterrors" = "Errori attuali:";
