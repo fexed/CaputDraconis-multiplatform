@@ -5,7 +5,7 @@ import platform.darwin.NSObject
 
 class IOSPlatform: Platform {
     override val name: String = "iOS"
-    override val appVersion: String = "v0.2"
+    override val appVersion: String = "v1.0"
 }
 
 actual fun getPlatform(): Platform = IOSPlatform()
