@@ -10,9 +10,37 @@ import SwiftUI
 import expelliarmus
 
 struct SurvivalModeWindow: View {
-    let spellList = iOSSpellsLoader().LoadSpells()
+    var spellList = iOSSpellsLoader().LoadSpells()
+    @State var currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: iOSSpellsLoader().LoadSpells())
+    @State var currentPoints = 0
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
-        Text(SpellListUtility.companion.GetRandomSpell(spellList: spellList).nome)
+        DuelLayout(
+            spell: currentSpell,
+            FiniteAction: {
+                if (checkSpell(currentSpell: currentSpell, defensiveSpell: "Finite")) {
+                    currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
+                } else {
+                    self.mode.wrappedValue.dismiss()
+                }
+            },
+            ProtegoAction: {
+                if (checkSpell(currentSpell: currentSpell, defensiveSpell: "Protego")) {
+                    currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
+                } else {
+                    self.mode.wrappedValue.dismiss()
+                }},
+            ScutumAction: {
+                if (checkSpell(currentSpell: currentSpell, defensiveSpell: "Scutum")) {
+                    currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
+                } else {
+                    self.mode.wrappedValue.dismiss()
+                }}
+        )
     }
+}
+
+func checkSpell(currentSpell: Spell, defensiveSpell: String) -> Bool {
+    return currentSpell.difinc.lowercased().contains(defensiveSpell.lowercased())
 }

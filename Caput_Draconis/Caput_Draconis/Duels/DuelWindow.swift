@@ -65,3 +65,21 @@ struct ModeCard: View {
 
     }
 }
+
+struct DuelLayout: View {
+    var spell: Spell
+    var FiniteAction: (() -> Void)
+    var ProtegoAction: (() -> Void)
+    var ScutumAction: (() -> Void)
+    
+    var body: some View {
+        VStack {
+            Text(spell.nome)
+            HStack {
+                Button(action: FiniteAction, label: { Text("Finite") }).padding()
+                Button(action: ProtegoAction, label: { Text("Protego") }).padding()
+                Button(action: ScutumAction, label: { Text("Scutum") }).padding()
+            }
+        }
+    }
+}
