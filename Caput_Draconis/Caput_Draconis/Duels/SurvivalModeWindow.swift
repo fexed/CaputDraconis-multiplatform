@@ -46,7 +46,3 @@ struct SurvivalModeWindow: View {
         )
     }
 }
-
-func checkSpell(currentSpell: Spell, defensiveSpell: String) -> Bool {
-    return currentSpell.difinc.lowercased().contains(defensiveSpell.lowercased())
-}
