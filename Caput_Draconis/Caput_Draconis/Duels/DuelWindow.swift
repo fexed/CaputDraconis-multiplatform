@@ -41,9 +41,9 @@ struct MainMenu: View {
             ModeCard(title: NSLocalizedString("arcademode", comment: ""), desc: NSLocalizedString("arcademodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: "")) {
                 arcadeModeSelected = true
             }
-            ModeCard(title: NSLocalizedString("timermode", comment: ""), desc: NSLocalizedString("timermodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: "")) {
-                timerlModeSelected = true
-            }
+//            ModeCard(title: NSLocalizedString("timermode", comment: ""), desc: NSLocalizedString("timermodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: "")) {
+//                timerlModeSelected = true
+//            }
             Spacer()
             SwiftUIBannerAd(adPosition: .bottom, adUnitId: "ca-app-pub-3940256099942544/2934735716")
         }
