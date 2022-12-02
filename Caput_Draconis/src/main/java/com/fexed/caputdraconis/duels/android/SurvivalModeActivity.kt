@@ -45,11 +45,15 @@ class SurvivalModeActivity : ComponentActivity() {
             var currentPoints = remember {
                 mutableStateOf(0)
             }
+            var message = remember {
+                mutableStateOf("")
+            }
 
             DuelActivity.GameScene(
                 activity = this,
                 currentSpell = currentSpell,
                 currentPoints = currentPoints,
+                message = message,
                 finiteAction = {
                     if (checkSpell(currentSpell.value, "Finite")) {
                         currentSpell.value = newSpell(spellList, activity)

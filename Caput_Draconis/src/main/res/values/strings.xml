@@ -45,4 +45,7 @@
     <string name="currpoints">Current points:</string>
     <string name="currerrors">Current errors:</string>
     <string name="descrgiocotext">The training minigame has three play modes:</string>
+
+    <string name="correct">Correct!</string>
+    <string name="wrong">Wrong</string>
 </resources>

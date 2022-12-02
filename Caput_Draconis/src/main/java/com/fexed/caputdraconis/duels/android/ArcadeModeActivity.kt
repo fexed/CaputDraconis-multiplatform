@@ -48,17 +48,23 @@ class ArcadeModeActivity : ComponentActivity() {
             var errors by remember {
                 mutableStateOf(0)
             }
+            var message = remember {
+                mutableStateOf("")
+            }
 
             DuelActivity.GameScene(
                 activity = this,
                 currentSpell = currentSpell,
                 currentPoints = currentPoints,
+                message = message,
                 finiteAction = {
                     if (checkSpell(currentSpell.value, "Finite")) {
                         currentSpell.value = newSpell(spellList, activity)
                         currentPoints.value++
+                        message.value = resources.getString(R.string.correct)
                     } else {
                         errors++
+                        message.value = resources.getString(R.string.wrong)
                         if (errors == 3) finish()
                         else currentSpell.value = newSpell(spellList, activity)
                     }
@@ -67,8 +73,10 @@ class ArcadeModeActivity : ComponentActivity() {
                     if (checkSpell(currentSpell.value, "Protego")) {
                         currentSpell.value = newSpell(spellList, activity)
                         currentPoints.value++
+                        message.value = resources.getString(R.string.correct)
                     } else {
                         errors++
+                        message.value = resources.getString(R.string.wrong)
                         if (errors == 3) finish()
                         else currentSpell.value = newSpell(spellList, activity)
                     }
@@ -77,8 +85,10 @@ class ArcadeModeActivity : ComponentActivity() {
                     if (checkSpell(currentSpell.value, "Scutum")) {
                         currentSpell.value = newSpell(spellList, activity)
                         currentPoints.value++
+                        message.value = resources.getString(R.string.correct)
                     } else {
                         errors++
+                        message.value = resources.getString(R.string.wrong)
                         if (errors == 3) finish()
                         else currentSpell.value = newSpell(spellList, activity)
                     }

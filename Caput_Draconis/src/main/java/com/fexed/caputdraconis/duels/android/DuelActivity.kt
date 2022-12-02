@@ -46,6 +46,7 @@ class DuelActivity : ComponentActivity() {
         fun GameScene(activity: ComponentActivity,
                       currentSpell: MutableState<Spell>,
                       currentPoints: MutableState<Int>,
+                      message: MutableState<String>,
                       finiteAction: () -> Unit,
                       protegoAction: () -> Unit,
                       scutumAction: () -> Unit,
@@ -75,6 +76,9 @@ class DuelActivity : ComponentActivity() {
                                     .padding(8.dp)
                             )
                         }
+                        Text(text = message.value,
+                            textAlign = TextAlign.Center
+                        )
                         Row(modifier = Modifier
                             .fillMaxWidth()
                             .wrapContentHeight()
@@ -237,6 +241,7 @@ class DuelActivity : ComponentActivity() {
             activity = ComponentActivity(),
             currentSpell = remember { mutableStateOf(Spell("Incantesimo", "", "", "", "")) },
             currentPoints = remember { mutableStateOf(0) },
+            message = remember { mutableStateOf("Test") },
             finiteAction = { /*TODO*/ },
             protegoAction = { /*TODO*/ },
             scutumAction = { /*TODO*/ },

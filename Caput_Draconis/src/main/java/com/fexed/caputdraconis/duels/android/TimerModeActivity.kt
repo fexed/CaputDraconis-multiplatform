@@ -51,6 +51,9 @@ class TimerModeActivity : ComponentActivity() {
             var currentPoints = remember {
                 mutableStateOf(0)
             }
+            var message = remember {
+                mutableStateOf("")
+            }
 
             duelTimer = DuelTimerUtility().createDuelTimer {
                 activity.finish()
@@ -66,6 +69,7 @@ class TimerModeActivity : ComponentActivity() {
                 activity = this,
                 currentSpell = currentSpell,
                 currentPoints = currentPoints,
+                message = message,
                 finiteAction = {
                     spellTimer.cancel()
                     spellTimer = DuelTimerUtility().createSpellTimer {
