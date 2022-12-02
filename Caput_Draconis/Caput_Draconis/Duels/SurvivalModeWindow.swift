@@ -21,6 +21,7 @@ struct SurvivalModeWindow: View {
             FiniteAction: {
                 if (checkSpell(currentSpell: currentSpell, defensiveSpell: "Finite")) {
                     DuelUtility.companion.incrTotalSpellsNumber(prefs: NSObject())
+                    currentPoints += 1
                     currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
                 } else {
                     self.mode.wrappedValue.dismiss()
@@ -29,6 +30,7 @@ struct SurvivalModeWindow: View {
             ProtegoAction: {
                 if (checkSpell(currentSpell: currentSpell, defensiveSpell: "Protego")) {
                     DuelUtility.companion.incrTotalSpellsNumber(prefs: NSObject())
+                    currentPoints += 1
                     currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
                 } else {
                     self.mode.wrappedValue.dismiss()
@@ -36,6 +38,7 @@ struct SurvivalModeWindow: View {
             ScutumAction: {
                 if (checkSpell(currentSpell: currentSpell, defensiveSpell: "Scutum")) {
                     DuelUtility.companion.incrTotalSpellsNumber(prefs: NSObject())
+                    currentPoints += 1
                     currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
                 } else {
                     self.mode.wrappedValue.dismiss()
