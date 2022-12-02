@@ -36,9 +36,11 @@ struct MainMenu: View {
             }.padding()
             Text(NSLocalizedString("selectmode", comment: "")).font(.headline)
             ModeCard(title: NSLocalizedString("survmode", comment: ""), desc: NSLocalizedString("survmodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: "")) {
+                DuelUtility.companion.incrTotalSpellsNumber(prefs: NSObject())
                 survivalModeSelected = true
             }
             ModeCard(title: NSLocalizedString("arcademode", comment: ""), desc: NSLocalizedString("arcademodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: "")) {
+                DuelUtility.companion.incrTotalSpellsNumber(prefs: NSObject())
                 arcadeModeSelected = true
             }
 //            ModeCard(title: NSLocalizedString("timermode", comment: ""), desc: NSLocalizedString("timermodedesc", comment: ""), buttontxt: NSLocalizedString("play", comment: "")) {
@@ -74,12 +76,14 @@ struct DuelLayout: View {
     
     var body: some View {
         VStack {
-            Text(spell.nome)
+            Spacer()
+            Text(spell.nome).scaledToFill().font(.title).padding()
+            Spacer()
             HStack {
                 Button(action: FiniteAction, label: { Text("Finite") }).padding()
                 Button(action: ProtegoAction, label: { Text("Protego") }).padding()
                 Button(action: ScutumAction, label: { Text("Scutum") }).padding()
-            }
+            }.padding()
         }
     }
 }
