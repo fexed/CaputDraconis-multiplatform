@@ -83,7 +83,7 @@ struct SpellListWindow: View {
                 }
                 .padding(.bottom, 16)
             }
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 
