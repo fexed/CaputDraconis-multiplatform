@@ -47,5 +47,5 @@
     <string name="descrgiocotext">The training minigame has three play modes:</string>
 
     <string name="correct">Correct!</string>
-    <string name="wrong">Wrong</string>
+    <string name="wrong">Wrong, the correct counterspell was %s</string>
 </resources>

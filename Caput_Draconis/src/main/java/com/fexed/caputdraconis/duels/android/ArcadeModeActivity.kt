@@ -64,7 +64,7 @@ class ArcadeModeActivity : ComponentActivity() {
                         message.value = resources.getString(R.string.correct)
                     } else {
                         errors++
-                        message.value = resources.getString(R.string.wrong)
+                        message.value = resources.getString(R.string.wrong, currentSpell.value.difinc.lowercase())
                         if (errors == 3) finish()
                         else currentSpell.value = newSpell(spellList, activity)
                     }
@@ -76,7 +76,7 @@ class ArcadeModeActivity : ComponentActivity() {
                         message.value = resources.getString(R.string.correct)
                     } else {
                         errors++
-                        message.value = resources.getString(R.string.wrong)
+                        message.value = resources.getString(R.string.wrong, currentSpell.value.difinc.lowercase())
                         if (errors == 3) finish()
                         else currentSpell.value = newSpell(spellList, activity)
                     }
@@ -88,7 +88,7 @@ class ArcadeModeActivity : ComponentActivity() {
                         message.value = resources.getString(R.string.correct)
                     } else {
                         errors++
-                        message.value = resources.getString(R.string.wrong)
+                        message.value = resources.getString(R.string.wrong, currentSpell.value.difinc.lowercase())
                         if (errors == 3) finish()
                         else currentSpell.value = newSpell(spellList, activity)
                     }

@@ -47,5 +47,5 @@
     <string name="descrgiocotext">Il minigioco di allenamento ha tre modalità:</string>
 
     <string name="correct">Corretto!</string>
-    <string name="wrong">Sbagliato</string>
+    <string name="wrong">Sbagliato, il controincantesimo corretto era %s</string>
 </resources>
