@@ -14,6 +14,7 @@ struct ArcadeModeWindow: View {
     @State var currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: iOSSpellsLoader().LoadSpells())
     @State var currentPoints = 0
     @State var currentErrors = 0
+    @State var currentMessage = ""
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
@@ -21,10 +22,12 @@ struct ArcadeModeWindow: View {
             spell: currentSpell,
             FiniteAction: {
                 if (checkSpell(currentSpell: currentSpell, defensiveSpell: "Finite")) {
+                    currentMessage = NSLocalizedString("corretto", comment: "")
                     DuelUtility.companion.incrTotalSpellsNumber(prefs: NSObject())
                     currentPoints += 1
                     currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
                 } else {
+                    currentMessage = NSLocalizedString("sbagliato", comment: "") + " " + currentSpell.difinc
                     currentErrors += 1
                     if (currentErrors == 3) {
                         self.mode.wrappedValue.dismiss()
@@ -36,10 +39,12 @@ struct ArcadeModeWindow: View {
             },
             ProtegoAction: {
                 if (checkSpell(currentSpell: currentSpell, defensiveSpell: "Protego")) {
+                    currentMessage = NSLocalizedString("corretto", comment: "")
                     DuelUtility.companion.incrTotalSpellsNumber(prefs: NSObject())
                     currentPoints += 1
                     currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
                 } else {
+                    currentMessage = NSLocalizedString("sbagliato", comment: "") + " " + currentSpell.difinc
                     currentErrors += 1
                     if (currentErrors == 3) {
                         self.mode.wrappedValue.dismiss()
@@ -50,10 +55,12 @@ struct ArcadeModeWindow: View {
                 }},
             ScutumAction: {
                 if (checkSpell(currentSpell: currentSpell, defensiveSpell: "Scutum")) {
+                    currentMessage = NSLocalizedString("corretto", comment: "")
                     DuelUtility.companion.incrTotalSpellsNumber(prefs: NSObject())
                     currentPoints += 1
                     currentSpell = SpellListUtility.companion.GetRandomSpell(spellList: spellList)
                 } else {
+                    currentMessage = NSLocalizedString("sbagliato", comment: "") + " " + currentSpell.difinc
                     currentErrors += 1
                     if (currentErrors == 3) {
                         self.mode.wrappedValue.dismiss()
@@ -64,6 +71,7 @@ struct ArcadeModeWindow: View {
                 }},
             Bottom: {
                 VStack {
+                    Text(currentMessage).padding().font(.footnote)
                     HStack {
                         Text("currentpoints").padding()
                         Text(String(currentPoints)).padding()

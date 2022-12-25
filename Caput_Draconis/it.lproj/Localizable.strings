@@ -50,3 +50,5 @@
 "descrgiocotext" = "Il minigioco di allenamento ha tre modalità:";
 "currentpoints" = "Punti attuali:";
 "currenterrors" = "Errori attuali:";
+"corretto" = "Corretto!";
+"sbagliato" = "Sbagliato! Il controincantesimo corretto era";
