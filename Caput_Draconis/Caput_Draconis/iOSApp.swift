@@ -25,10 +25,10 @@ struct iOSApp: App {
         }
     }
     
-	var body: some Scene {
-		WindowGroup {
-			SpellListWindow()
-		}
+    var body: some Scene {
+        WindowGroup {
+                SpellListWindow()
+        }
         
-	}
+    }
 }
