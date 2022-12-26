@@ -26,7 +26,9 @@ kotlin {
             resources.srcDir("src/commonMain/assets")
 
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+                // FIRE STORE
+                implementation("co.touchlab:firestore:0.2.5")
             }
         }
         val commonTest by getting {
@@ -42,7 +44,9 @@ kotlin {
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
+            resources.srcDir("src/commonMain/assets")
             dependsOn(commonMain)
+            //iosTest.dependsOn(this)
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
@@ -50,18 +54,13 @@ kotlin {
         val iosX64Test by getting
         val iosArm64Test by getting
         val iosSimulatorArm64Test by getting
-        val iosTest by creating {
-            dependsOn(commonTest)
-            iosX64Test.dependsOn(this)
-            iosArm64Test.dependsOn(this)
-            iosSimulatorArm64Test.dependsOn(this)
-        }
+        //val iosTest by getting
     }
 }
 
 android {
     namespace = "com.fexed.caputdraconis"
-    compileSdk = 32
+    compileSdk = 33
     sourceSets {
         named("main") {
             assets.srcDir("src/commonMain/assets")
@@ -69,6 +68,6 @@ android {
     }
     defaultConfig {
         minSdk = 21
-        targetSdk = 32
+        targetSdk = 33
     }
 }

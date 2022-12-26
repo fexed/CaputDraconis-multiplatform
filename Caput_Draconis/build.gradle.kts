@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace = "com.fexed.caputdraconis.android"
-    compileSdk = 32
+    compileSdk = 33
     defaultConfig {
         applicationId = "com.fexed.caputdraconis.android"
         minSdk = 21
-        targetSdk = 32
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
     }
@@ -33,11 +33,15 @@ android {
 
 dependencies {
     implementation(project(":expelliarmus"))
-    implementation("androidx.compose.ui:ui:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.2.1")
-    implementation("androidx.compose.foundation:foundation:1.2.1")
-    implementation("androidx.compose.material:material:1.2.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
-    implementation("com.google.android.gms:play-services-ads:21.3.0")
+    implementation("androidx.compose.ui:ui:1.3.2")
+    implementation("androidx.compose.ui:ui-tooling:1.3.2")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.3.2")
+    implementation("androidx.compose.foundation:foundation:1.3.1")
+    implementation("androidx.compose.material:material:1.3.1")
+    implementation("androidx.activity:activity-compose:1.6.1")
+    implementation("com.google.android.gms:play-services-ads:21.4.0")
+
+    // FIREBASE
+    implementation("com.google.firebase:firebase-core:21.1.1")
+    implementation("com.google.firebase:firebase-firestore:24.4.1")
 }
