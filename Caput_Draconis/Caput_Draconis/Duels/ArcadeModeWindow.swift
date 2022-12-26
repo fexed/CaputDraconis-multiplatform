@@ -8,6 +8,8 @@
 
 import SwiftUI
 import expelliarmus
+import FirebaseCore
+import FirebaseAnalytics
 
 struct ArcadeModeWindow: View {
     var spellList = iOSSpellsLoader().LoadSpells()
@@ -83,5 +85,11 @@ struct ArcadeModeWindow: View {
                 }
             }
         )
+        .onAppear {
+            Analytics.logEvent(expelliarmus.Keys.companion.KEY_GAMEOPEN,
+                               parameters: [:])
+            Analytics.logEvent(expelliarmus.Keys.companion.KEY_ARCADE,
+                               parameters: [:])
+        }
     }
 }

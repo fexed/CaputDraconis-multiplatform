@@ -1,5 +1,7 @@
 import SwiftUI
 import GoogleMobileAds
+import FirebaseCore
+import FirebaseAnalytics
 import expelliarmus
 
 struct iOSSpell: Identifiable {
@@ -83,7 +85,12 @@ struct SpellListWindow: View {
                 }
                 .padding(.bottom, 16)
             }
-        }.navigationViewStyle(.stack)
+        }
+        .navigationViewStyle(.stack)
+        .onAppear {
+            Analytics.logEvent(expelliarmus.Keys.companion.KEY_APPOPEN,
+                               parameters: [:])
+        }
     }
 }
 

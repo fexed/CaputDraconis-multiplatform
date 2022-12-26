@@ -8,6 +8,8 @@
 
 import SwiftUI
 import expelliarmus
+import FirebaseCore
+import FirebaseAnalytics
 
 struct SurvivalModeWindow: View {
     var spellList = iOSSpellsLoader().LoadSpells()
@@ -53,5 +55,11 @@ struct SurvivalModeWindow: View {
                 }
             }
         )
+        .onAppear {
+            Analytics.logEvent(expelliarmus.Keys.companion.KEY_GAMEOPEN,
+                               parameters: [:])
+            Analytics.logEvent(expelliarmus.Keys.companion.KEY_SURVIVAL,
+                               parameters: [:])
+        }
     }
 }
