@@ -44,4 +44,5 @@ dependencies {
     // FIREBASE
     implementation("com.google.firebase:firebase-core:21.1.1")
     implementation("com.google.firebase:firebase-firestore:24.4.1")
+    implementation("com.google.firebase:firebase-common-ktx:20.2.0")
 }

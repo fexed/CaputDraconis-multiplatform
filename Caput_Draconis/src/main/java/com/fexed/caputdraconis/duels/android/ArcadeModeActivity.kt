@@ -20,11 +20,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fexed.caputdraconis.AndroidSpellsLoader
+import com.fexed.caputdraconis.analytics.Keys
 import com.fexed.caputdraconis.android.CaputDraconisTheme
 import com.fexed.caputdraconis.duels.android.DuelActivity.Companion.checkSpell
 import com.fexed.caputdraconis.duels.android.DuelActivity.Companion.newSpell
 import com.fexed.caputdraconis.getSpellsLoader
 import com.fexed.caputdraconis.android.R
+import com.google.firebase.analytics.FirebaseAnalytics
 import java.util.*
 
 class ArcadeModeActivity : ComponentActivity() {
@@ -37,6 +39,9 @@ class ArcadeModeActivity : ComponentActivity() {
         val spellsLoader = getSpellsLoader()
         val spellList = spellsLoader.LoadSpells()
         val activity = this
+
+        FirebaseAnalytics.getInstance(applicationContext).logEvent(Keys.KEY_GAMEOPEN, null)
+        FirebaseAnalytics.getInstance(applicationContext).logEvent(Keys.KEY_ARCADE, null)
 
         setContent {
             var currentSpell = remember {

@@ -27,12 +27,16 @@ import androidx.compose.ui.window.Dialog
 import com.fexed.caputdraconis.AndroidSpellsLoader.Companion.CSVFile
 import com.fexed.caputdraconis.Spell
 import com.fexed.caputdraconis.SpellListUtility
+import com.fexed.caputdraconis.analytics.Keys
 import com.fexed.caputdraconis.duels.android.DuelActivity
 
 import com.fexed.caputdraconis.getSpellsLoader
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.ktx.initialize
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -45,6 +49,10 @@ class SpellListActivity : ComponentActivity() {
             assets.open("IncantesimiEN.csv")
         val spellsLoader = getSpellsLoader()
         val spellList = spellsLoader.LoadSpells()
+
+        Firebase.initialize(applicationContext)
+
+        FirebaseAnalytics.getInstance(applicationContext).logEvent(Keys.KEY_APPOPEN, null)
 
         setContent {
             var query by remember { mutableStateOf("") }
