@@ -9,3 +9,6 @@ captures
 local.properties
 xcuserdata
 Caput_Draconis/release/Caput_Draconis-release.aab
+google-services.json
+Caput_Draconis/GoogleService-Info.plist
+Caput_Draconis/GoogleService-Info.plist
